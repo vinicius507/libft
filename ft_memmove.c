@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 17:56:33 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/15 00:12:10 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/13 12:51:56 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/05/14 18:44:10 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	len;
+	char	*temp;
+	size_t	offset;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	temp = malloc(n);
+	offset = -1;
+	while (++offset < n)
+		temp[offset] = ((char *)src)[offset];
+	offset = -1;
+	while (++offset < n)
+		((char *)dest)[offset] = temp[offset];
+	free(temp);
+	return (dest);
 }

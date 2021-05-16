@@ -2,7 +2,15 @@ NAME= libft.a
 CC= gcc
 FLAGS= -Wall -Wextra -Werror
 DEPS= libft.h
-OBJECTS= ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_strlen.o ft_substr.o
+OBJECTS= ft_memset.o \
+	 ft_bzero.o \
+	 ft_memcpy.o \
+	 ft_memccpy.o \
+	 ft_memmove.o \
+	 ft_memchr.o \
+	 ft_memcmp.o \
+	 ft_strlen.o \
+	 ft_substr.o
 
 all: $(NAME)
 

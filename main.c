@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:57:22 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/12 17:57:24 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/05/14 21:44:27 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,25 @@ void	print_test(const char *function
 		, const uint8_t error
 		, const char *error_msg)
 {
+	const char	*msg;
+	char		*status;
+
+	if (error)
+	{
+		msg = error_msg;
+		status = KO_MSG;
+	}
+	else
+	{
+		msg = "";
+		status = OK_MSG;
+	}
 	printf("\e[38;5;38m[%s]\e[0m (%s)\n"
-			"Result: %s%s\n"
-			, function
-			, params
-			, error ? KO_MSG : OK_MSG
-			, error ? error_msg : "");
+		"Result: %s%s\n",
+		function,
+		params,
+		status,
+		msg);
 }
 
 int	main(void)
@@ -37,7 +50,7 @@ int	main(void)
 	char	*params;
 	char	*error_msg;
 
-	// ft_memset
+	// NOTE: ft_memset
 	int		i;
 	int		values[8] = {0, 1, 7, 16, 64, 122, 178, 255};
 	t_list	teste;
@@ -67,7 +80,7 @@ int	main(void)
 		free(error_msg);
 		i++;
 	}
-	// ft_bzero
+	// NOTE: ft_bzero
 	params = malloc(22);
 	error_msg = malloc(100);
 	ft_bzero(&teste, sizeof(t_list));
@@ -86,7 +99,7 @@ int	main(void)
 			, error_msg);
 	free(params);
 	free(error_msg);
-	// ft_strlen
+	// NOTE: ft_strlen
 	char *str[2] = {"", "This is a string"};
 	size_t len;
 	size_t ft_len;
@@ -111,14 +124,14 @@ int	main(void)
 		free(error_msg);
 		i++;
 	}
-	// ft_substr
+	// NOTE: ft_substr
 	char *src = "This is a string";
 	char *dest;
 
 	dest = ft_substr(src, 0, 4);
 	error_msg = malloc(100);
 	sprintf(error_msg
-			, "Result: KO. Expected: \"This\", Got: %s\n"
+			, "Expected: \"This\", Got: %s\n"
 			, dest);
 	print_test("ft_substr"
 			, "src = \"This is a string\", start = 0, len = 4"
@@ -141,7 +154,7 @@ int	main(void)
 			, "Expected dest to be a NULL pointer.");
 	free(dest);
 	free(error_msg);
-	// ft_memcpy
+	// NOTE: ft_memcpy
 	char *src_mem = "abcdefg";
 	char *dest_mem;
 	char *ft_dest_mem;
@@ -156,7 +169,7 @@ int	main(void)
 			, "Copied memory sector doesn't match expected result.");
 	free(dest_mem);
 	free(ft_dest_mem);
-	// ft_memccpy
+	// NOTE: ft_memccpy
 	dest_mem = calloc(8, sizeof(char));
 	ft_dest_mem = calloc(8, sizeof(char));
 	memccpy(dest_mem, src_mem, 'f', 8);
@@ -165,6 +178,75 @@ int	main(void)
 			, "dest = char *, src = \"abcdefg\", c = 'f', n = 8"
 			, memcmp(ft_dest_mem, dest_mem, 8)
 			, "Copied memory sector doesn't match expected result.");
+	free(dest_mem);
+	free(ft_dest_mem);
+	// NOTE: ft_memmove
+	dest_mem = malloc(8);
+	ft_dest_mem = malloc(8);
+	memmove(dest_mem, src_mem, 8);
+	ft_memmove(ft_dest_mem, src_mem, 8);
+	print_test("ft_memmove",
+			"dest = char *, src = \"abcdefg\", n = 8",
+			memcmp(ft_dest_mem, dest_mem, 8),
+			"Copied memory sector doesn't match expected result.");
+	free(dest_mem);
+	free(ft_dest_mem);
+	dest_mem = malloc(8);
+	ft_dest_mem = malloc(8);
+	memcpy(dest_mem, src_mem, 8);
+	memcpy(ft_dest_mem, src_mem, 8);
+	memmove(dest_mem, dest_mem + 3, 5);
+	ft_memmove(ft_dest_mem, ft_dest_mem + 3, 5);
+	print_test("ft_memmove",
+			"dest = \"abcdefg\", src = \"defg\", n = 8",
+			memcmp(ft_dest_mem, dest_mem, 8),
+			"Copied memory sector doesn't match expected result.");
+	free(dest_mem);
+	free(ft_dest_mem);
+	// NOTE: ft_memchr
+	char	*res;
+	char	*ft_res;
+
+	res = memchr(src_mem, 'f', 8);
+	ft_res = ft_memchr(src_mem, 'f', 8);
+	error_msg = malloc(100);
+	sprintf(error_msg,
+			"Expected: %p, Got: %p",
+			res,
+			ft_res);
+	print_test("ft_memchr",
+			"s = \"abcdefg\", c = 'f', n = 8",
+			res != ft_res,
+			error_msg);
+	free(error_msg);
+	// NOTE: ft_memcmp
+	dest_mem = malloc(8);
+	ft_dest_mem = malloc(8);
+	memcpy(dest_mem, src_mem, 8);
+	memcpy(ft_dest_mem, src_mem, 8);
+	error_msg = malloc(40);
+	sprintf(error_msg,
+			"Expected: 0, Got: %d",
+			ft_memcmp(ft_dest_mem, src_mem, 8));
+	print_test("ft_memcmp",
+			"s1 = \"abcdefg\", s2 = \"abcdefg\", 8",
+			memcmp(dest_mem, src_mem, 8) != ft_memcmp(ft_dest_mem, src_mem, 8),
+			error_msg);
+	free(error_msg);
+	free(dest_mem);
+	free(ft_dest_mem);
+	dest_mem = strcpy(malloc(8), "abcddfg");
+	ft_dest_mem = strcpy(malloc(8), "abcddfg");
+	error_msg = malloc(40);
+	sprintf(error_msg,
+			"Expected: %d, Got: %d",
+			memcmp(dest_mem, src_mem, 8),
+			ft_memcmp(ft_dest_mem, src_mem, 8));
+	print_test("ft_memcmp",
+			"s1 = \"abcdefg\", s2 = \"abcdefg\", 8",
+			memcmp(dest_mem, src_mem, 8) != ft_memcmp(ft_dest_mem, src_mem, 8),
+			error_msg);
+	free(error_msg);
 	free(dest_mem);
 	free(ft_dest_mem);
 	return (0);
