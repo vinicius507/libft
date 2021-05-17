@@ -19,6 +19,8 @@
 #define OK_MSG "\e[38;5;42mOK\e[0m"
 #define KO_MSG "\e[38;5;168mKO\e[0m, "
 
+size_t	strlcpy(char *dest, const char *src, size_t size);
+
 void	print_test(const char *function
 		, const char *params
 		, const uint8_t error
@@ -249,5 +251,25 @@ int	main(void)
 	free(error_msg);
 	free(dest_mem);
 	free(ft_dest_mem);
+	// NOTE: ft_strlcpy
+	char	*ft_dest;
+	
+	src = "alo galera";
+	dest = malloc(8);
+	ft_dest = malloc(8);
+	error_msg = malloc(40);
+	len = strlcpy(dest, src, 8);
+	ft_len = ft_strlcpy(ft_dest, src, 8);
+	sprintf(error_msg,
+			"Expected: %lu, Got: %lu",
+			len, ft_len);
+
+	print_test("ft_strlcpy",
+			"dest = char *, src = \"alo galera\", size = 8",
+			len != ft_len,
+			error_msg);
+	free(dest);
+	free(ft_dest);
+	free(error_msg);
 	return (0);
 }

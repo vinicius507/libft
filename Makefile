@@ -10,6 +10,7 @@ OBJECTS= ft_memset.o \
 	 ft_memchr.o \
 	 ft_memcmp.o \
 	 ft_strlen.o \
+	 ft_strlcpy.o \
 	 ft_substr.o
 
 all: $(NAME)
@@ -29,6 +30,6 @@ fclean: clean
 re: fclean all
 
 _test: $(OBJECTS)
-	$(CC) $(FLAGS) -fsanitize=address $^ main.c -g
+	$(CC) $(FLAGS) -fsanitize=address $^ main.c -g -lbsd
 
 test: _test clean

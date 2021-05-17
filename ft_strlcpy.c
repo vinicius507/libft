@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 17:56:07 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/12 17:56:09 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/16 19:28:56 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/05/16 19:28:56 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	offset;
 
 	offset = 0;
-	while (offset < n)
+	if (size > 0)
 	{
-		*((char *)dest + offset) = *((char *)src + offset);
-		if (*((char *)dest + offset) == c)
-			return (dest + offset + 1);
-		offset++;
+		while (offset < size - 1)
+		{
+			dest[offset] = src[offset];
+			offset++;
+		}
+		dest[offset] = '\0';
 	}
-	return (NULL);
+	offset = 0;
+	while (src[offset] != '\0')
+		offset++;
+	return (offset);
 }
