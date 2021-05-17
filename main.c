@@ -20,6 +20,7 @@
 #define KO_MSG "\e[38;5;168mKO\e[0m, "
 
 size_t	strlcpy(char *dest, const char *src, size_t size);
+size_t	strlcat(char *dest, const char *src, size_t size);
 
 void	print_test(const char *function
 		, const char *params
@@ -40,11 +41,11 @@ void	print_test(const char *function
 		status = OK_MSG;
 	}
 	printf("\e[38;5;38m[%s]\e[0m (%s)\n"
-		"Result: %s%s\n",
-		function,
-		params,
-		status,
-		msg);
+			"Result: %s%s\n",
+			function,
+			params,
+			status,
+			msg);
 }
 
 int	main(void)
@@ -253,7 +254,7 @@ int	main(void)
 	free(ft_dest_mem);
 	// NOTE: ft_strlcpy
 	char	*ft_dest;
-	
+
 	src = "alo galera";
 	dest = malloc(8);
 	ft_dest = malloc(8);
@@ -271,5 +272,62 @@ int	main(void)
 	free(dest);
 	free(ft_dest);
 	free(error_msg);
+	// NOTE: ft_strlcat
+	dest = strcpy(malloc(32), "abcdefg");
+	ft_dest = strcpy(malloc(32), "abcdefg");
+	len = strlcat(dest, src, 0);
+	ft_len = ft_strlcat(ft_dest, src, 0);
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			len != ft_len,
+			"Returned Size is wrong.");
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			strcmp(dest, ft_dest),
+			"String is not as expected");
+	free(dest);
+	free(ft_dest);
+	dest = strcpy(malloc(32), "abcdefg");
+	ft_dest = strcpy(malloc(32), "abcdefg");
+	len = strlcat(dest, src, 6);
+	ft_len = ft_strlcat(ft_dest, src, 6);
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			len != ft_len,
+			"Returned Size is wrong.");
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			strcmp(dest, ft_dest),
+			"String is not as expected");
+	free(dest);
+	free(ft_dest);
+	dest = strcpy(malloc(32), "abcdefg");
+	ft_dest = strcpy(malloc(32), "abcdefg");
+	len = strlcat(dest, src, 16);
+	ft_len = ft_strlcat(ft_dest, src, 16);
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			len != ft_len,
+			"Returned Size is wrong.");
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			strcmp(dest, ft_dest),
+			"String is not as expected");
+	free(dest);
+	free(ft_dest);
+	dest = strcpy(malloc(32), "abcdefg");
+	ft_dest = strcpy(malloc(32), "abcdefg");
+	len = strlcat(dest, src, 30);
+	ft_len = ft_strlcat(ft_dest, src, 30);
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			len != ft_len,
+			"Returned Size is wrong.");
+	print_test("ft_strlcat",
+			"dest = \"abcdefg\", src = \"alo galera\", size = 0",
+			strcmp(dest, ft_dest),
+			"String is not as expected");
+	free(dest);
+	free(ft_dest);
 	return (0);
 }
