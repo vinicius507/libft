@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 17:57:22 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/14 21:44:27 by vgoncalv         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdio.h>
 #include <strings.h>
 #include <string.h>
@@ -83,6 +71,7 @@ int	main(void)
 		free(error_msg);
 		i++;
 	}
+
 	// NOTE: ft_bzero
 	params = malloc(22);
 	error_msg = malloc(100);
@@ -102,6 +91,7 @@ int	main(void)
 			, error_msg);
 	free(params);
 	free(error_msg);
+
 	// NOTE: ft_strlen
 	char *str[2] = {"", "This is a string"};
 	size_t len;
@@ -127,6 +117,7 @@ int	main(void)
 		free(error_msg);
 		i++;
 	}
+
 	// NOTE: ft_substr
 	char *src = "This is a string";
 	char *dest;
@@ -157,6 +148,7 @@ int	main(void)
 			, "Expected dest to be a NULL pointer.");
 	free(dest);
 	free(error_msg);
+
 	// NOTE: ft_memcpy
 	char *src_mem = "abcdefg";
 	char *dest_mem;
@@ -172,6 +164,7 @@ int	main(void)
 			, "Copied memory sector doesn't match expected result.");
 	free(dest_mem);
 	free(ft_dest_mem);
+
 	// NOTE: ft_memccpy
 	dest_mem = calloc(8, sizeof(char));
 	ft_dest_mem = calloc(8, sizeof(char));
@@ -183,6 +176,7 @@ int	main(void)
 			, "Copied memory sector doesn't match expected result.");
 	free(dest_mem);
 	free(ft_dest_mem);
+
 	// NOTE: ft_memmove
 	dest_mem = malloc(8);
 	ft_dest_mem = malloc(8);
@@ -206,6 +200,7 @@ int	main(void)
 			"Copied memory sector doesn't match expected result.");
 	free(dest_mem);
 	free(ft_dest_mem);
+
 	// NOTE: ft_memchr
 	char	*res;
 	char	*ft_res;
@@ -222,6 +217,7 @@ int	main(void)
 			res != ft_res,
 			error_msg);
 	free(error_msg);
+
 	// NOTE: ft_memcmp
 	dest_mem = malloc(8);
 	ft_dest_mem = malloc(8);
@@ -252,6 +248,7 @@ int	main(void)
 	free(error_msg);
 	free(dest_mem);
 	free(ft_dest_mem);
+
 	// NOTE: ft_strlcpy
 	char	*ft_dest;
 
@@ -272,6 +269,7 @@ int	main(void)
 	free(dest);
 	free(ft_dest);
 	free(error_msg);
+
 	// NOTE: ft_strlcat
 	dest = strcpy(malloc(32), "abcdefg");
 	ft_dest = strcpy(malloc(32), "abcdefg");
@@ -329,5 +327,57 @@ int	main(void)
 			"String is not as expected");
 	free(dest);
 	free(ft_dest);
+
+	// NOTE: ft_strchr
+	src = "abcdefghijklmnoprstuvzwyz";
+	dest = strchr(src, 'n');
+	ft_dest = ft_strchr(src, 'n');
+	print_test("ft_strchr",
+			"s = \"abcdefghijklmnoprstuvzwyz\", c = 'n'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	dest = strchr(src, '\0');
+	ft_dest = ft_strchr(src, '\0');
+	print_test("ft_strchr",
+			"s = \"abcdefghijklmnoprstuvzwyz\", c = '\\0'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	src = "abcdefghijklmmoprstuvzwyz";
+	dest = strchr(src, 'n');
+	ft_dest = ft_strchr(src, 'n');
+	print_test("ft_strchr",
+			"s = \"abcdefghijklmnoprstuvzwyz\", c = 'n'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	src = "";
+	dest = strchr(src, 'n');
+	ft_dest = ft_strchr(src, 'n');
+	print_test("ft_strchr",
+			"s = \"\", c = 'n'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	
+	// NOTE: ft_strrchr
+	src = "aaabbbccdeeefffggghhjkkkkkl";
+	dest = strchr(src, 'f');
+	ft_dest = strchr(src, 'f');
+	print_test("ft_strrchr",
+			"s = \"aaabbbccdeeefffggghhjkkkkkl\", c = 'f'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	src = "aaabbbccdeeefffggghhjkkkkkl";
+	dest = strchr(src, '\0');
+	ft_dest = strchr(src, '\0');
+	print_test("ft_strrchr",
+			"s = \"aaabbbccdeeefffggghhjkkkkkl\", c = '\\0'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	src = "aaabbbccdeeefffggghhjkkkkkl";
+	dest = strchr(src, 'f');
+	ft_dest = strchr(src, 'f');
+	print_test("ft_strrchr",
+			"s = \"\", c = 'f'",
+			dest != ft_dest,
+			"Return value is wrong.");
 	return (0);
 }
