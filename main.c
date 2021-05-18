@@ -605,7 +605,7 @@ int	main(void)
 		free(params);
 	free(error_msg);
 
-	// ft_calloc
+	// NOTE: ft_calloc
 	dest_mem = calloc(10, sizeof(char));
 	ft_dest_mem = ft_calloc(10, sizeof(char));
 	print_test("ft_calloc",
@@ -626,5 +626,21 @@ int	main(void)
 			ft_dest_mem != NULL,
 			"Return value is not NULL");
 	free(ft_dest_mem);
+	
+	// NOTE: ft_strdup
+	src = "alo galera do forro";
+	ft_dest = ft_strdup(src);
+	print_test("ft_strdup",
+			"s = \"alo galera do forro\"",
+			strcmp(src, ft_dest),
+			"Dup String does not match");
+	free(ft_dest);
+	src = "";
+	ft_dest = ft_strdup(src);
+	print_test("ft_strdup",
+			"s = \"\"",
+			strcmp(src, ft_dest),
+			"Dup String does not match");
+	free(ft_dest);
 	return (0);
 }

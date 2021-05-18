@@ -20,6 +20,7 @@ OBJECTS= ft_memset.o \
 	 ft_is.o \
 	 ft_to.o \
 	 ft_calloc.o \
+	 ft_strdup.o \
 	 ft_substr.o
 
 all: $(NAME)
