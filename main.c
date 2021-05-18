@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <strings.h>
+#ifdef __linux__
+#include <bsd/string.h>
+#endif
+#ifdef __apple__
 #include <string.h>
+#endif
 #include <stdint.h>
 #include "libft.h"
 
 #define OK_MSG "\e[38;5;42mOK\e[0m"
 #define KO_MSG "\e[38;5;168mKO\e[0m, "
-
-size_t	strlcpy(char *dest, const char *src, size_t size);
-size_t	strlcat(char *dest, const char *src, size_t size);
-char	*strnstr(char *big, char *little, size_t len);
 
 void	print_test(const char *function
 		, const char *params
