@@ -9,6 +9,7 @@
 
 size_t	strlcpy(char *dest, const char *src, size_t size);
 size_t	strlcat(char *dest, const char *src, size_t size);
+char	*strnstr(char *big, char *little, size_t len);
 
 void	print_test(const char *function
 		, const char *params
@@ -377,6 +378,39 @@ int	main(void)
 	ft_dest = strchr(src, 'f');
 	print_test("ft_strrchr",
 			"s = \"\", c = 'f'",
+			dest != ft_dest,
+			"Return value is wrong.");
+	// NOTE: ft_strnstr
+	src = "alo galera do forro";
+	dest = strnstr(src, "alo", 4);
+	ft_dest = strnstr(src, "alo", 4);
+	print_test("ft_strnstr",
+			"big = \"alo galera do forro\", little \"alo\", len = 4",
+			dest != ft_dest,
+			"Return value is wrong.");
+	dest = strnstr(src, "alo", 2);
+	ft_dest = strnstr(src, "alo", 2);
+	print_test("ft_strnstr",
+			"big = \"alo galera do forro\", little \"alo\", len = 2",
+			dest != ft_dest,
+			"Return value is wrong.");
+	dest = strnstr(src, "", 2);
+	ft_dest = strnstr(src, "", 2);
+	print_test("ft_strnstr",
+			"big = \"alo galera do forro\", little \"\", len = 2",
+			dest != ft_dest,
+			"Return value is wrong.");
+	dest = strnstr(src, "", 0);
+	ft_dest = strnstr(src, "", 0);
+	print_test("ft_strnstr",
+			"big = \"alo galera do forro\", little \"\", len = 0",
+			dest != ft_dest,
+			"Return value is wrong.");
+	src = "";
+	dest = strnstr(src, "", 0);
+	ft_dest = strnstr(src, "", 0);
+	print_test("ft_strnstr",
+			"big = \"\", little \"\", len = 0",
 			dest != ft_dest,
 			"Return value is wrong.");
 	return (0);

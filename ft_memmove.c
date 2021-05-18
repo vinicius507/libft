@@ -14,16 +14,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*temp;
+	char	temp;
 	size_t	offset;
 
-	temp = malloc(n);
 	offset = -1;
 	while (++offset < n)
-		temp[offset] = ((char *)src)[offset];
-	offset = -1;
-	while (++offset < n)
-		((char *)dest)[offset] = temp[offset];
-	free(temp);
+	{
+		temp = ((char *)src)[offset];
+		((char *)dest)[offset] = temp;
+	}
 	return (dest);
 }

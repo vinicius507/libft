@@ -14,6 +14,8 @@ OBJECTS= ft_memset.o \
 	 ft_strlcat.o \
 	 ft_strchr.o \
 	 ft_strrchr.o \
+	 ft_strnstr.o \
+	 ft_strncmp.o \
 	 ft_substr.o
 
 all: $(NAME)

@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// TODO: Finish the lazy way
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	b_size;
@@ -25,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	else if (l_size > b_size)
 		return (NULL);
-	while (len)
+	while (l_size > len)
 	{
 		if (!ft_strncmp(big, little, l_size))
 			return ((char *)big);
