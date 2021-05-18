@@ -62,6 +62,12 @@ int		ft_isascii(int c);
 
 int		ft_isprint(int c);
 
+int		ft_toupper(int c);
+
+int		ft_tolower(int c);
+
+void	*ft_calloc(size_t nmemb, size_t size);
+
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif

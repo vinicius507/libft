@@ -561,5 +561,70 @@ int	main(void)
 	if (params != NULL)
 		free(params);
 	free(error_msg);
+
+	// NOTE: ft_toupper ft_tolower
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 127)
+	{
+		if (ft_toupper(i_res) != toupper(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_toupper",
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (ft_toupper(i_res) != toupper(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
+
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 127)
+	{
+		if (ft_tolower(i_res) != tolower(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_tolower",
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (ft_tolower(i_res) != tolower(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
+
+	// ft_calloc
+	dest_mem = calloc(10, sizeof(char));
+	ft_dest_mem = ft_calloc(10, sizeof(char));
+	print_test("ft_calloc",
+			"nmemb = 10, size = sizeof(char)",
+			memcmp(dest_mem, ft_dest_mem, 10),
+			"Allocated memory is not set to 0");
+	free(dest_mem);
+	free(ft_dest_mem);
+	ft_dest_mem = ft_calloc(0, sizeof(char));
+	print_test("ft_calloc",
+			"nmemb = 0, size = sizeof(char)",
+			ft_dest_mem != NULL,
+			"Return value is not NULL");
+	free(ft_dest_mem);
+	ft_dest_mem = ft_calloc(10, 0);
+	print_test("ft_calloc",
+			"nmemb = 0, size = sizeof(char)",
+			ft_dest_mem != NULL,
+			"Return value is not NULL");
+	free(ft_dest_mem);
 	return (0);
 }
