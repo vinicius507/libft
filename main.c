@@ -413,5 +413,45 @@ int	main(void)
 			"big = \"\", little \"\", len = 0",
 			dest != ft_dest,
 			"Return value is wrong.");
+	
+	// NOTE: ft_atoi
+	int i_res;
+	int ft_i_res;
+	i_res = atoi("  \n\t\v\r \n \f-0");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f-0");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f-0\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");
+	i_res = atoi("  \n\t\v\r \n \f+0");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f+0");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f+0\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");;
+	i_res = atoi("  \n\t\v\r \n \f-10");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f-10");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f-10\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");
+	i_res = atoi("  \n\t\v\r \n \f+10");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f+10");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f+10\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");
+	i_res = atoi("  \n\t\v\r \n \f+2147483647");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f+2147483647");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f+2147483647\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");
+	i_res = atoi("  \n\t\v\r \n \f-2147483648");
+	ft_i_res = ft_atoi("  \n\t\v\r \n \f-2147483648");
+	print_test("ft_atoi",
+			"nptr = \"  \\n\\t\\v\\r \\n \\f-2147483648\"",
+			i_res != ft_i_res,
+			"Return value is wrong.");
 	return (0);
 }
