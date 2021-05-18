@@ -32,3 +32,20 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
+
+int	ft_isascii(int c)
+{
+	unsigned char	c_u;
+
+	c_u = (unsigned char)c;
+	if (c_u < 128)
+		return (1);
+	return (0);
+}
+
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c < 127)
+		return (1);
+	return (0);
+}

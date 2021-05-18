@@ -453,5 +453,24 @@ int	main(void)
 			"nptr = \"  \\n\\t\\v\\r \\n \\f-2147483648\"",
 			i_res != ft_i_res,
 			"Return value is wrong.");
+
+	// NOTE: ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint
+	i_res = 'A' - 1;
+	params = NULL;
+	while (++i_res <= 'Z')
+	{
+		if (!ft_isalpha(i_res) || !ft_isalpha(i_res + 32))
+		{
+			params = malloc(6);
+			sprintf(params, "c = %c", i_res);
+			break ;
+		}
+	}
+	print_test("ft_isalpha",
+			params == NULL ? "c = all alphabetic chars" : params,
+			!ft_isalpha(i_res) || !ft_isalpha(i_res + 32),
+			"Return value should be different of zero. Got: 0");
+	if (params != NULL)
+		free(params);
 	return (0);
 }
