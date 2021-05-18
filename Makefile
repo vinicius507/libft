@@ -36,7 +36,13 @@ fclean: clean
 
 re: fclean all
 
+TEST_FLAGS = $(FLAGS) -fsanitize=address -g
+
+ifeq ($(shell uname), Linux)
+	TEST_FLAGS := $(TEST_FLAGS) -lbsd
+endif
+
 _test: $(OBJECTS)
-	$(CC) $(FLAGS) -fsanitize=address $^ main.c -g -lbsd
+	$(CC) $(TEST_FLAGS) $^ main.c
 
 test: _test clean
