@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <strings.h>
 #ifdef __linux__
 #include <bsd/string.h>
 #endif
 #ifdef __apple__
 #include <string.h>
 #endif
+#include <strings.h>
+#include <ctype.h>
 #include <stdint.h>
 #include "libft.h"
 
@@ -456,22 +457,109 @@ int	main(void)
 			"Return value is wrong.");
 
 	// NOTE: ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint
-	i_res = 'A' - 1;
+	i_res = -1;
 	params = NULL;
-	while (++i_res <= 'Z')
+	while (++i_res <= 127)
 	{
-		if (!ft_isalpha(i_res) || !ft_isalpha(i_res + 32))
+		if (!ft_isalpha(i_res) ^ !isalpha(i_res))
 		{
-			params = malloc(6);
-			sprintf(params, "c = %c", i_res);
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
 			break ;
 		}
 	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
 	print_test("ft_isalpha",
-			params == NULL ? "c = all alphabetic chars" : params,
-			!ft_isalpha(i_res) || !ft_isalpha(i_res + 32),
-			"Return value should be different of zero. Got: 0");
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (!ft_isalpha(i_res) ^ !isalpha(i_res)),
+			error_msg);
 	if (params != NULL)
 		free(params);
+	free(error_msg);
+
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 127)
+	{
+		if (!ft_isdigit(i_res) ^ !isdigit(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_isdigit",
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (!ft_isdigit(i_res) ^ !isdigit(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
+
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 127)
+	{
+		if (!ft_isalnum(i_res) ^ !isalnum(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_isalnum",
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (!ft_isalnum(i_res) ^ !isalnum(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
+
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 255)
+	{
+		if (!ft_isascii(i_res) ^ !isascii(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_isascii",
+			params == NULL ? "c = 0 to 255" : params,
+			params == NULL ? 0 : (!ft_isascii(i_res) ^ !isascii(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
+
+	i_res = -1;
+	params = NULL;
+	while (++i_res <= 127)
+	{
+		if (!ft_isprint(i_res) ^ !isprint(i_res))
+		{
+			params = malloc(11);
+			sprintf(params, "c = 0x%02X", i_res);
+			break ;
+		}
+	}
+	error_msg = malloc(40);
+	sprintf(error_msg, "Expected: 0x%02X, Got: 0x%02X", isalpha(i_res), ft_isalpha(i_res));
+	print_test("ft_isprint",
+			params == NULL ? "c = ASCII characters up to 127" : params,
+			params == NULL ? 0 : (!ft_isprint(i_res) ^ !isprint(i_res)),
+			error_msg);
+	if (params != NULL)
+		free(params);
+	free(error_msg);
 	return (0);
 }
