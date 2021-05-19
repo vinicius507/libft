@@ -26,8 +26,5 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 		dest[offset] = '\0';
 	}
-	offset = 0;
-	while (src[offset] != '\0')
-		offset++;
-	return (offset);
+	return (ft_strlen(src));
 }

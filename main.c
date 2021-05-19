@@ -180,6 +180,18 @@ int	main(void)
 	free(dest_mem);
 	free(ft_dest_mem);
 
+	void *ptr;
+	void *ft_ptr;
+
+	ft_dest_mem = calloc(8, sizeof(char));
+	ptr = memccpy(ft_dest_mem, src_mem, 'f', 8);
+	ft_ptr = ft_memccpy(ft_dest_mem, src_mem, 'f', 8);
+	print_test("ft_memccpy"
+		, "dest = char *, src = \"abcdefg\", c = 'f', n = 8"
+		, ptr != ft_ptr 
+		, "Copied memory sector doesn't match expected result.");
+	free(ft_dest_mem);
+
 	// NOTE: ft_memmove
 	dest_mem = malloc(8);
 	ft_dest_mem = malloc(8);
@@ -642,5 +654,131 @@ int	main(void)
 		strcmp(src, ft_dest),
 		"Dup String does not match");
 	free(ft_dest);
+
+	// NOTE: ft_strjoin
+	src = "alo ";
+	dest = "galera";
+
+	ft_dest = ft_strjoin(src, dest);
+	print_test("ft_strjoin",
+		"s1 = \"alo \", s2 = \"galera\"",
+		strcmp(ft_dest, "alo galera"),
+		"Joined string does not match expected result");
+	free(ft_dest);
+
+	src = "";
+	dest = "";
+
+	ft_dest = ft_strjoin(src, dest);
+	print_test("ft_strjoin",
+		"s1 = \"alo \", s2 = \"galera\"",
+		strcmp(ft_dest, ""),
+		"Joined string does not match expected result");
+	free(ft_dest);
+
+	src = "";
+	dest = "alo galera";
+
+	ft_dest = ft_strjoin(src, dest);
+	print_test("ft_strjoin",
+		"s1 = \"alo \", s2 = \"galera\"",
+		strcmp(ft_dest, "alo galera"),
+		"Joined string does not match expected result");
+	free(ft_dest);
+
+	src = "alo galera";
+	dest = "";
+
+	ft_dest = ft_strjoin(src, dest);
+	print_test("ft_strjoin",
+		"s1 = \"alo \", s2 = \"galera\"",
+		strcmp(ft_dest, "alo galera"),
+		"Joined string does not match expected result");
+	free(ft_dest);
+
+	// NOTE: ft_strtrim
+	dest = strcpy(malloc(11), "alo galera");
+	ft_dest = ft_strtrim(dest, "a");
+	print_test("ft_strtrim",
+		"s1 = \"alo galera\", set = \"a\"",
+		strcmp(ft_dest, "lo galer"),
+		"Trailing characters from set");
+	free(dest);
+	free(ft_dest);
+
+	dest = strcpy(malloc(11), "alo galera");
+	ft_dest = ft_strtrim(dest, "alr");
+	print_test("ft_strtrim",
+		"s1 = \"alo galera\", set = \"alr\"",
+		strcmp(ft_dest, "o gale"),
+		"Trailing characters from set");
+	free(dest);
+	free(ft_dest);
+
+	dest = strcpy(malloc(11), "alo galera");
+	ft_dest = ft_strtrim(dest, "");
+	print_test("ft_strtrim",
+		"s1 = \"alo galera\", set = \"\"",
+		strcmp(ft_dest, "alo galera"),
+		"Trailing characters from set");
+	free(dest);
+	free(ft_dest);
+
+	dest = strcpy(malloc(1), "");
+	ft_dest = ft_strtrim(dest, "a\n\tbcdef");
+	print_test("ft_strtrim",
+		"s1 = \"\", set = \"a\\n\\tbcdef\"",
+		strcmp(ft_dest, ""),
+		"Trailing characters from set");
+	free(dest);
+	free(ft_dest);
+
+	dest = strcpy(malloc(1), "");
+	ft_dest = ft_strtrim(dest, "");
+	print_test("ft_strtrim",
+		"s1 = \"\", set = \"\"",
+		strcmp(ft_dest, ""),
+		"Trailing characters from set");
+	free(dest);
+	free(ft_dest);
+
+	// NOTE: ft_split
+	src = "Alo     isso e    uma  string. ";
+	char **strs;
+	char *lookup[5] = { "Alo", "isso", "e", "uma", "string." };
+
+	strs = ft_split(src, ' ');
+	ft_i_res = 0;
+	i_res = -1;
+	while (strs[++i_res] != NULL && i_res < 10);
+	if (i_res != 5)
+	{
+		ft_i_res = 1;
+		print_test("ft_split",
+			"s = \"Alo     isso e    uma  string. \", c = ' '",
+			1,
+			"Wrong words number.");
+	}
+	i_res = -1;
+	while (ft_i_res == 0 && ++i_res < 5)
+	{
+		if (strcmp(strs[i_res], lookup[i_res]))
+		{
+			ft_i_res = 1;
+			print_test("ft_split",
+				"s = \"Alo     isso e    uma  string. \", c = ' '",
+				1,
+				"Splitted words don't match expected result");
+		}
+		free(strs[i_res]);
+	}
+	if (!ft_i_res)
+	{
+		print_test("ft_split",
+			"s = \"Alo     isso e    uma  string. \", c = ' '",
+			0,
+			"");
+	}
+	free(strs);
 	return (0);
 }
