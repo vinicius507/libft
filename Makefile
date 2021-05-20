@@ -27,7 +27,8 @@ OBJECTS= ft_memset.o \
 		 ft_strjoin.o \
 		 ft_strtrim.o \
 		 ft_split.o \
-		 ft_itoa.o
+		 ft_itoa.o \
+		 ft_strmapi
 
 all: $(NAME)
 
