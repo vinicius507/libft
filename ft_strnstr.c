@@ -25,9 +25,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	else if (l_size > b_size)
 		return (NULL);
 	if (b_size > len)
-		s_size = b_size;
-	else
 		s_size = len;
+	else
+		s_size = b_size;
 	while (l_size < s_size)
 	{
 		if (!ft_strncmp(big, little, l_size))
