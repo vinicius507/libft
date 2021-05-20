@@ -217,6 +217,13 @@ int	main(void)
 	free(dest_mem);
 	free(ft_dest_mem);
 
+	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
+	ft_memmove(sResult + 1, sResult, 2);
+	ft_test("ft_memmove",
+		"dest = src + 1, src = { 67, 68, 67, 69, 0, 45 }, n = 8",
+		memcmp(sResult, sResult2, 7),
+		"Copied memory sector doesn't match expected result.");
 	// NOTE: ft_memchr
 	char	*res;
 	char	*ft_res;
@@ -244,12 +251,13 @@ int	main(void)
 		"Expected: 0, Got: %d",
 		ft_memcmp(ft_dest_mem, src_mem, 8));
 	ft_test("ft_memcmp",
-		"s1 = \"abcdefg\", s2 = \"abcdefg\", 8",
+		"s1 = \"abcdefg\", s2 = \"abcdefg\", n = 8",
 		memcmp(dest_mem, src_mem, 8) != ft_memcmp(ft_dest_mem, src_mem, 8),
 		error_msg);
 	free(error_msg);
 	free(dest_mem);
 	free(ft_dest_mem);
+
 	dest_mem = strcpy(malloc(8), "abcddfg");
 	ft_dest_mem = strcpy(malloc(8), "abcddfg");
 	error_msg = malloc(40);
@@ -258,12 +266,25 @@ int	main(void)
 		memcmp(dest_mem, src_mem, 8),
 		ft_memcmp(ft_dest_mem, src_mem, 8));
 	ft_test("ft_memcmp",
-		"s1 = \"abcdefg\", s2 = \"abcdefg\", 8",
+		"s1 = \"abcdefg\", s2 = \"abcdefg\", n = 8",
 		memcmp(dest_mem, src_mem, 8) != ft_memcmp(ft_dest_mem, src_mem, 8),
 		error_msg);
 	free(error_msg);
 	free(dest_mem);
 	free(ft_dest_mem);
+
+	char s[] = { -128, 0, 127, 0 };
+	char spy[] = { -128, 0, 127, 0 };
+	error_msg = malloc(40);
+	sprintf(error_msg,
+		"Expected: %d, Got: %d",
+		memcmp(s, spy, 4),
+		ft_memcmp(s, spy, 4));
+	ft_test("ft_memcmp",
+		"s1 = { -128, 0, 127, 0 }, s2 = { -128, 0, 127, 0 }, n = 4",
+		memcmp(s, spy, 4) != ft_memcmp(s, spy, 4),
+		error_msg);
+	free(error_msg);
 
 	// NOTE: ft_strlcpy
 	char	*ft_dest;

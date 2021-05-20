@@ -17,11 +17,22 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	temp;
 	size_t	offset;
 
-	offset = -1;
-	while (++offset < n)
+	if (src > dest)
 	{
-		temp = ((char *)src)[offset];
-		((char *)dest)[offset] = temp;
+		offset = -1;
+		while (++offset < n)
+		{
+			temp = ((char *)src)[offset];
+			((char *)dest)[offset] = temp;
+		}
+	}
+	else
+	{
+		while (n--)
+		{
+			temp = ((char *)src)[n];
+			((char *)dest)[n] = temp;
+		}
 	}
 	return (dest);
 }
