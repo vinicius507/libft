@@ -286,6 +286,23 @@ int	main(void)
 	free(ft_dest);
 	free(error_msg);
 
+	src = "alo galera";
+	dest = malloc(8);
+	ft_dest = malloc(8);
+	error_msg = malloc(40);
+	len = strlcpy(dest, src, 0);
+	ft_len = ft_strlcpy(ft_dest, src, 0);
+	sprintf(error_msg,
+		"Expected: %lu, Got: %lu",
+		len, ft_len);
+
+	ft_test("ft_strlcpy",
+		"dest = char *, src = \"alo galera\", size = 0",
+		len != ft_len,
+		error_msg);
+	free(dest);
+	free(ft_dest);
+	free(error_msg);
 	// NOTE: ft_strlcat
 	dest = strcpy(malloc(32), "abcdefg");
 	ft_dest = strcpy(malloc(32), "abcdefg");
