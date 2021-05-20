@@ -448,34 +448,42 @@ int	main(void)
 	// NOTE: ft_strnstr
 	src = "alo galera do forro";
 	dest = strnstr(src, "alo", 4);
-	ft_dest = strnstr(src, "alo", 4);
+	ft_dest = ft_strnstr(src, "alo", 4);
 	ft_test("ft_strnstr",
 		"big = \"alo galera do forro\", little \"alo\", len = 4",
 		dest != ft_dest,
 		"Return value is wrong.");
 	dest = strnstr(src, "alo", 2);
-	ft_dest = strnstr(src, "alo", 2);
+	ft_dest = ft_strnstr(src, "alo", 2);
 	ft_test("ft_strnstr",
 		"big = \"alo galera do forro\", little \"alo\", len = 2",
 		dest != ft_dest,
 		"Return value is wrong.");
 	dest = strnstr(src, "", 2);
-	ft_dest = strnstr(src, "", 2);
+	ft_dest = ft_strnstr(src, "", 2);
 	ft_test("ft_strnstr",
 		"big = \"alo galera do forro\", little \"\", len = 2",
 		dest != ft_dest,
 		"Return value is wrong.");
 	dest = strnstr(src, "", 0);
-	ft_dest = strnstr(src, "", 0);
+	ft_dest = ft_strnstr(src, "", 0);
 	ft_test("ft_strnstr",
 		"big = \"alo galera do forro\", little \"\", len = 0",
 		dest != ft_dest,
 		"Return value is wrong.");
 	src = "";
 	dest = strnstr(src, "", 0);
-	ft_dest = strnstr(src, "", 0);
+	ft_dest = ft_strnstr(src, "", 0);
 	ft_test("ft_strnstr",
 		"big = \"\", little \"\", len = 0",
+		dest != ft_dest,
+		"Return value is wrong.");
+
+	src = "aaabcabcd";
+	dest = strnstr(src, "aabc", -1);
+	ft_dest = ft_strnstr(src, "aabc", -1);
+	ft_test("ft_strnstr",
+		"big = \"aaabcabcd\", little \"aabc\", len = -1",
 		dest != ft_dest,
 		"Return value is wrong.");
 
