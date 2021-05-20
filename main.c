@@ -286,6 +286,18 @@ int	main(void)
 		error_msg);
 	free(error_msg);
 
+	char s1[] = { -128, 0, 127, 0 };
+	char spy1[] = { 0, 0, 127, 0 };
+	error_msg = malloc(40);
+	sprintf(error_msg,
+		"Expected: %d, Got: %d",
+		memcmp(s1, spy1, 0),
+		ft_memcmp(s1, spy1, 0));
+	ft_test("ft_memcmp",
+		"s1 = { -128, 0, 127, 0 }, s2 = { 0, 0, 127, 0 }, n = 0",
+		memcmp(s1, spy1, 0) != ft_memcmp(s1, spy1, 0),
+		error_msg);
+	free(error_msg);
 	// NOTE: ft_strlcpy
 	char	*ft_dest;
 
