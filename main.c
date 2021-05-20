@@ -487,6 +487,13 @@ int	main(void)
 		dest != ft_dest,
 		"Return value is wrong.");
 
+	src = "aaabcabcd";
+	dest = strnstr(src, "aabc", 5);
+	ft_dest = ft_strnstr(src, "aabc", 5);
+	ft_test("ft_strnstr",
+		"big = \"aaabcabcd\", little \"aabc\", len = 5",
+		dest != ft_dest,
+		"Return value is wrong.");
 	// NOTE: ft_atoi
 	int i_res;
 	int ft_i_res;
