@@ -38,6 +38,5 @@ void	ft_putnbr_fd(int n, int fd)
 		n /= 10;
 	}
 	counter = -1;
-	while (nbr[++counter])
-		ft_putchar_fd(nbr[counter], fd);
+	ft_putstr_fd(nbr, fd);
 }
