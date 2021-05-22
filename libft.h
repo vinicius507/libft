@@ -82,4 +82,6 @@ char	*ft_itoa(int n);
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
+void	ft_putchar_fd(char c, int fd);
+
 #endif
