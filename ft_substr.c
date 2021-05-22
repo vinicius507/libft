@@ -16,27 +16,21 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	size;
-	size_t	limit;
 	size_t	m_size;
+	size_t	s_start;
 
+	s_start = start;
 	size = ft_strlen(s);
-	m_size = len + 1;
 	if (start > size)
 	{
-		limit = start;
 		m_size = 1;
-		s += start;
+		s_start = 0;
 	}
 	else if (start + len > size)
-	{
-		limit = size;
-		s += start;
-	}
+		m_size = size - start + 1;
 	else
-		limit = start + len;
-	sub = malloc(limit - start + 1);
-	if (sub == NULL)
-		return (NULL);
-	ft_strlcpy(sub, s, m_size);
+		m_size = len - start + 1;
+	sub = malloc(m_size);
+	ft_strlcpy(sub, s + s_start, m_size);
 	return (sub);
 }
