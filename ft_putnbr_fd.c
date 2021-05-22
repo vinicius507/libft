@@ -30,7 +30,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n *= -1;
 	while (digits--)
 	{
-		ft_putchar_fd((n % 10) + '0', fd);
+		ft_putchar_fd(((n % 10) * -1) + '0', fd);
 		n /= 10;
 	}
 }
