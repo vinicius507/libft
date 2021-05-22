@@ -19,9 +19,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	limit;
 
 	size = ft_strlen(s);
-	if (size < start)
-		return (NULL);
-	if (start + len > size)
+	if (start > size)
+		limit = start;
+	else if (start + len > size)
 		limit = size;
 	else
 		limit = start + len;
