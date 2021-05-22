@@ -15,21 +15,20 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	size_t	s_len;
-	size_t	offset;
+	size_t	size;
+	size_t	limit;
 
-	s_len = ft_strlen(s);
-	if (s_len < start)
+	size = ft_strlen(s);
+	if (size > start)
 		return (NULL);
-	sub = malloc(len + 1);
+	if (start + len > size)
+		limit = size;
+	else
+		limit = start + len;
+	sub = malloc(limit - start + 1);
 	if (sub == NULL)
 		return (NULL);
-	offset = 0;
-	while (offset < len && offset + start < s_len)
-	{
-		sub[offset] = s[offset + start];
-		offset++;
-	}
-	sub[offset] = '\0';
+	s += start;
+	ft_strlcpy(sub, s, len);
 	return (sub);
 }
