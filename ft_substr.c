@@ -19,7 +19,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	limit;
 
 	size = ft_strlen(s);
-	if (size > start)
+	if (size < start)
 		return (NULL);
 	if (start + len > size)
 		limit = size;
@@ -29,6 +29,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (sub == NULL)
 		return (NULL);
 	s += start;
-	ft_strlcpy(sub, s, len);
+	ft_strlcpy(sub, s, len + 1);
 	return (sub);
 }
