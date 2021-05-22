@@ -40,6 +40,20 @@ void	ft_test(const char *function
 		msg);
 }
 
+char	mapi_t1(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (toupper(c));
+	return (tolower(c));
+}
+
+char	mapi_t2(unsigned int i, char c)
+{
+	if (i % 2)
+		return (toupper(c));
+	return (tolower(c));
+}
+
 int	main(void)
 {
 	char	*params;
@@ -891,5 +905,43 @@ int	main(void)
 	free(dest);
 
 	// NOTE: ft_strmapi
+	src = "alo galera do forro";
+	dest = ft_strmapi(src, mapi_t1);
+	error_msg = malloc(100);
+	sprintf(error_msg,
+		"Expected: \"AlO GaLeRa dO FoRrO\", got: \"%s\"",
+		dest);
+	ft_test("ft_strmapi",
+		"src = \"alo galera do forro\", f = mapi_t1",
+		strcmp(dest, "AlO GaLeRa dO FoRrO"),
+		error_msg);
+	free(dest);
+	free(error_msg);
+
+	src = "alo galera do forro";
+	dest = ft_strmapi(src, mapi_t2);
+	error_msg = malloc(100);
+	sprintf(error_msg,
+		"Expected: \"aLo gAlErA Do fOrRo\", got: \"%s\"",
+		dest);
+	ft_test("ft_strmapi",
+		"src = \"alo galera do forro\", f = mapi_t2",
+		strcmp(dest, "aLo gAlErA Do fOrRo"),
+		error_msg);
+	free(dest);
+	free(error_msg);
+
+	src = "";
+	dest = ft_strmapi(src, mapi_t1);
+	error_msg = malloc(100);
+	sprintf(error_msg,
+		"Expected: \"\", got: \"%s\"",
+		dest);
+	ft_test("ft_strmapi",
+		"src = \"\", f = mapi_t1",
+		strcmp(dest, ""),
+		error_msg);
+	free(dest);
+	free(error_msg);
 	return (0);
 }
