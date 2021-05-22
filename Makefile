@@ -30,7 +30,8 @@ OBJECTS= ft_memset.o \
 		 ft_itoa.o \
 		 ft_strmapi.o \
 		 ft_putchar_fd.o \
-		 ft_putstr_fd.o
+		 ft_putstr_fd.o \
+		 ft_putendl_fd.o \
 
 all: $(NAME)
 
