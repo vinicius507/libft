@@ -12,10 +12,13 @@
 
 #include "libft.h"
 
+#define MAX_DIGITS 11
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	counter;
-	int	digits;
+	int		counter;
+	int		digits;
+	char	nbr[MAX_DIGITS];
 
 	digits = 1;
 	counter = n / 10;
@@ -28,9 +31,13 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 	else
 		n *= -1;
+	nbr[digits] = '\0';
 	while (digits--)
 	{
-		ft_putchar_fd(((n % 10) * -1) + '0', fd);
+		nbr[digits] = ((n % 10) * -1) + '0';
 		n /= 10;
 	}
+	counter = -1;
+	while (nbr[++counter])
+		ft_putchar_fd(nbr[counter], fd);
 }

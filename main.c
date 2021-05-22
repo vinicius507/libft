@@ -947,5 +947,7 @@ int	main(void)
 	// NOTE: ft_putchar_fd
 	
 	// NOTE: ft_putstr_fd
+	
+	// NOTE: ft_putnbr_fd
 	return (0);
 }
