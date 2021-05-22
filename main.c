@@ -945,5 +945,7 @@ int	main(void)
 	free(error_msg);
 
 	// NOTE: ft_putchar_fd
+	
+	// NOTE: ft_putstr_fd
 	return (0);
 }
