@@ -137,22 +137,27 @@ int	main(void)
 		, error_msg);
 	free(error_msg);
 	free(dest);
-	dest = ft_substr(src, 20, 4);
-	ft_test("ft_substr"
-		, "src = \"This is a string\", start = 20, len = 4"
-		, dest != NULL
-		, "Expected dest to be a NULL pointer.");
-	free(dest);
+
 	src = "";
 	dest = ft_substr(src, 0, 4);
-	error_msg = malloc(100);
 	ft_test("ft_substr"
 		, "src = \"\", start = 0, len = 4"
 		, strcmp("", dest)
 		, "Expected dest to be a NULL pointer.");
 	free(dest);
-	free(error_msg);
 
+	src = "tripouille";
+	dest = ft_substr(src, 100, 1);
+	error_msg = malloc(100);
+	sprintf(error_msg
+		, "Expected: \"\", Got: \"%s\"\n"
+		, dest);
+	ft_test("ft_substr"
+		, "src = \"tripouille\", start = 100, len = 1"
+		, strcmp("", dest)
+		, error_msg);
+	free(dest);
+	free(error_msg);
 	// NOTE: ft_memcpy
 	char *src_mem = "abcdefg";
 	char *dest_mem;
