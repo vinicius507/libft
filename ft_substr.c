@@ -29,7 +29,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	else if (start + len > size)
 		m_size = size - start + 1;
 	else
-		m_size = len - start + 1;
+		m_size = len + 1;
 	sub = malloc(m_size);
 	ft_strlcpy(sub, s + s_start, m_size);
 	return (sub);

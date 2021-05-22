@@ -158,6 +158,19 @@ int	main(void)
 		, error_msg);
 	free(dest);
 	free(error_msg);
+
+	dest = ft_substr(src, 1, 1);
+	error_msg = malloc(100);
+	sprintf(error_msg
+		, "Expected: \"r\", Got: \"%s\"\n"
+		, dest);
+	ft_test("ft_substr"
+		, "src = \"tripouille\", start = 1, len = 1"
+		, strcmp("r", dest)
+		, error_msg);
+	free(dest);
+	free(error_msg);
+
 	// NOTE: ft_memcpy
 	char *src_mem = "abcdefg";
 	char *dest_mem;
