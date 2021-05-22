@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re _test test 
+.PHONY: all clean fclean re 
 
 NAME= libft.a
 CC= gcc
@@ -49,14 +49,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-TEST_FLAGS = $(FLAGS) -fsanitize=address -g
-
-ifeq ($(shell uname), Linux)
-	TEST_FLAGS := $(TEST_FLAGS) -lbsd
-endif
-
-_test: $(NAME)
-	$(CC) $(TEST_FLAGS) main.c $^
-
-test: _test fclean
