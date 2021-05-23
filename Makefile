@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re bonus
 
 NAME= libft.a
 CC= gcc
@@ -33,6 +33,8 @@ OBJECTS= ft_memset.o \
 		 ft_putstr_fd.o \
 		 ft_putendl_fd.o \
 		 ft_putnbr_fd.o
+BONUS= ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o \
+	   ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
 all: $(NAME)
 
@@ -43,9 +45,12 @@ $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) $< -c -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJECTS) $(BONUS)
+	ar rcs $(NAME) $^
