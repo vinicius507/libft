@@ -14,15 +14,11 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t	offset;
+	void	*ptr;
 
-	offset = 0;
-	while (offset < n)
-	{
-		*((char *)dest + offset) = *((char *)src + offset);
-		if (*((char *)dest + offset) == c)
-			return (dest + offset + 1);
-		offset++;
-	}
+	ptr = ft_memchr(src, c, n);
+	if (ptr != NULL)
+		return (ft_memcpy(dest, src, ptr - src + 1));
+	ft_memcpy(dest, src, n);
 	return (NULL);
 }
