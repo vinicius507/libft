@@ -60,3 +60,6 @@ re: fclean all
 
 bonus: $(OBJECTS) $(BONUS)
 	ar rcs $(NAME) $^
+
+so: $(OBJECTS) $(BONUS)
+	$(CC) -shared -o libft.so $^
