@@ -19,8 +19,13 @@ OBJECTS= ft_memset.o \
 		 ft_strnstr.o \
 		 ft_strncmp.o \
 		 ft_atoi.o \
-		 ft_is.o \
-		 ft_to.o \
+		 ft_isalpha.o \
+		 ft_isdigit.o \
+		 ft_isalnum.o \
+		 ft_isascii.o \
+		 ft_isprint.o \
+		 ft_toupper.o \
+		 ft_tolower.o \
 		 ft_calloc.o \
 		 ft_strdup.o \
 		 ft_substr.o \
