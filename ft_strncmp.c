@@ -24,8 +24,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (offset < n && s1_u[offset] && s2_u[offset])
 	{
 		if (s1_u[offset] != s2_u[offset])
-			return (s1_u[offset] - s2_u[offset]);
+			break ;
 		offset++;
 	}
-	return (0);
+	if (offset == n)
+		return (0);
+	return (s1_u[offset] - s2_u[offset]);
 }
