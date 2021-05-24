@@ -15,10 +15,14 @@
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	void	*ptr;
+	size_t	distance;
 
 	ptr = ft_memchr(src, c, n);
 	if (ptr != NULL)
-		return (ft_memcpy(dest, src, ptr - src + 1));
+	{
+		distance = (size_t)ptr - (size_t)src + 1;
+		return (ft_memcpy(dest, src, distance) + distance);
+	}
 	ft_memcpy(dest, src, n);
 	return (NULL);
 }
