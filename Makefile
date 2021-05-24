@@ -4,6 +4,7 @@ NAME= libft.a
 CC= clang
 FLAGS= -Wall -Wextra -Werror
 DEPS= libft.h
+INCLUDES=./
 OBJECTS= ft_memset.o \
 		 ft_bzero.o \
 		 ft_memcpy.o \
@@ -47,7 +48,7 @@ $(NAME): $(OBJECTS)
 	ar rcs $@ $^
 
 %.o: %.c $(DEPS)
-	$(CC) $(FLAGS) $< -c -o $@
+	$(CC) $(FLAGS) -I$(INCLUDES) $< -c -o $@
 
 clean:
 	rm -f $(OBJECTS) $(BONUS)

@@ -11,13 +11,30 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	offset;
+	unsigned long int	*ls;
+	unsigned long int	value;
+	size_t				offset;
+	size_t				counter;
+	unsigned int		bytes_per_word;
 
-	offset = -1;
-	while (++offset < n)
-		*((char *)s + offset) = c;
+	value = (c & 0xff);
+	counter = 3;
+	while ((1 << counter) < __WORDSIZE)
+		value |= value << (1 << counter++);
+	bytes_per_word = (1 << (counter - 3));
+	offset = 0;
+	while (n & (bytes_per_word - 1))
+	{
+		*((char *)s + offset++) = (char)c;
+		n--;
+	}
+	ls = (unsigned long int *)(s + offset);
+	n >>= (counter - 3);
+	while (n--)
+		*ls++ = value;
 	return (s);
 }
