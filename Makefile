@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re bonus
 
 NAME= libft.a
-CC= gcc
+CC= clang
 FLAGS= -Wall -Wextra -Werror
 DEPS= libft.h
 OBJECTS= ft_memset.o \
@@ -54,6 +54,3 @@ re: fclean all
 
 bonus: $(OBJECTS) $(BONUS)
 	ar rcs $(NAME) $^
-
-so: $(OBJECTS) $(BONUS)
-	$(CC) -shared -o libft.so $^
