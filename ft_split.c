@@ -66,6 +66,8 @@ char	**ft_split(const char *s, char c)
 	size_t	words;
 	size_t	counter;
 
+	if (s == NULL)
+		return (NULL);
 	words = get_wordsnum(s, c);
 	res = malloc((words + 1) * sizeof(char *));
 	if (res == NULL)

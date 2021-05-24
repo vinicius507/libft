@@ -39,6 +39,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	limit;
 	size_t	offset;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	while (contains(set, *s1))
 		s1++;
 	limit = get_limit(s1, set);
