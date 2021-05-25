@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static void	cpy_bwd(void *dest, const void *src, size_t n)
 {
