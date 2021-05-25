@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re bonus
 
 NAME= libft.a
-CC= clang
+CC= gcc
 FLAGS= -Wall -Wextra -Werror
 DEPS= libft.h
 INCLUDES=./
