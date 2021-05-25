@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	get_diff(const void *s1, const void *s2)
+static int	get_diff(const void *s1, const void *s2)
 {
 	size_t				counter;
 	const unsigned char	*s1p;
