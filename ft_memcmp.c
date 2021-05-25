@@ -14,9 +14,9 @@
 
 int	get_diff(const void *s1, const void *s2)
 {
-	size_t			counter;
-	unsigned char	*s1p;
-	unsigned char	*s2p;
+	size_t				counter;
+	const unsigned char	*s1p;
+	const unsigned char	*s2p;
 
 	s1p = (unsigned char *)s1;
 	s2p = (unsigned char *)s2;
@@ -28,10 +28,10 @@ int	get_diff(const void *s1, const void *s2)
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned long int	*s1p;
-	unsigned long int	*s2p;
-	unsigned int		counter;
-	unsigned int		bytes_per_word;
+	const unsigned long int	*s1p;
+	const unsigned long int	*s2p;
+	unsigned int			counter;
+	unsigned int			bytes_per_word;
 
 	counter = 3;
 	while ((1 << counter) < __WORDSIZE)

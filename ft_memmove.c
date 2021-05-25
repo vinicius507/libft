@@ -15,10 +15,10 @@
 
 static void	cpy_bwd(void *dest, const void *src, size_t n)
 {
-	unsigned long int	*srcp;
-	unsigned long int	*destp;
-	size_t				counter;
-	unsigned int		bytes_per_word;
+	const unsigned long int	*srcp;
+	unsigned long int		*destp;
+	size_t					counter;
+	unsigned int			bytes_per_word;
 
 	counter = 3;
 	while ((1 << counter) < __WORDSIZE)

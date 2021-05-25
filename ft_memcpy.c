@@ -14,11 +14,11 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned long int	*srcp;
-	unsigned long int	*destp;
-	size_t				offset;
-	size_t				counter;
-	unsigned int		bytes_per_word;
+	const unsigned long int	*srcp;
+	unsigned long int		*destp;
+	size_t					offset;
+	size_t					counter;
+	unsigned int			bytes_per_word;
 
 	if (dest == src)
 		return (dest);
