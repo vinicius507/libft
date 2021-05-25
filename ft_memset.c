@@ -24,7 +24,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	value = (c & 0xff);
 	counter = 3;
 	while ((1 << counter) < __WORDSIZE)
-		value |= value << (1 << counter++);
+		value |= (value << (1 << counter++));
 	bytes_per_word = (1 << (counter - 3));
 	offset = 0;
 	while (n & (bytes_per_word - 1))

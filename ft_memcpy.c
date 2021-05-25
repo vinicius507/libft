@@ -14,15 +14,29 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	offset;
+	unsigned long int	*srcp;
+	unsigned long int	*destp;
+	size_t				offset;
+	size_t				counter;
+	unsigned int		bytes_per_word;
 
 	if (dest == src)
 		return (dest);
+	counter = 3;
+	while ((1 << counter) < __WORDSIZE)
+		counter++;
+	bytes_per_word = (1 << (counter - 3));
 	offset = 0;
-	while (offset < n)
+	while (n & (bytes_per_word - 1))
 	{
-		*((unsigned char *)dest + offset) = *((unsigned char *)src + offset);
+		*((char *)dest + offset) = *((char *)src + offset);
 		offset++;
+		n--;
 	}
+	srcp = (unsigned long int *)(src + offset);
+	destp = (unsigned long int *)(dest + offset);
+	n >>= (counter - 3);
+	while (n--)
+		*destp++ = *srcp++;
 	return (dest);
 }

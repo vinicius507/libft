@@ -11,30 +11,40 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+
+static void	cpy_bwd(void *dest, const void *src, size_t n)
+{
+	unsigned long int	*srcp;
+	unsigned long int	*destp;
+	size_t				counter;
+	unsigned int		bytes_per_word;
+
+	counter = 3;
+	while ((1 << counter) < __WORDSIZE)
+		counter++;
+	bytes_per_word = (1 << (counter - 3));
+	src += n;
+	dest += n;
+	while (n & (bytes_per_word - 1))
+	{
+		*((char *)--dest) = *((char *)--src);
+		n--;
+	}
+	n >>= (counter - 3);
+	srcp = (unsigned long int *)(src);
+	destp = (unsigned long int *)(dest);
+	while (n--)
+		*--destp = *--srcp;
+}
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	temp;
-	size_t	offset;
-
 	if (dest == src)
 		return (dest);
-	if (src > dest)
-	{
-		offset = -1;
-		while (++offset < n)
-		{
-			temp = ((char *)src)[offset];
-			((char *)dest)[offset] = temp;
-		}
-	}
+	if (src < dest && dest < src + n)
+		cpy_bwd(dest, src, n);
 	else
-	{
-		while (n--)
-		{
-			temp = ((char *)src)[n];
-			((char *)dest)[n] = temp;
-		}
-	}
+		ft_memcpy(dest, src, n);
 	return (dest);
 }
