@@ -12,20 +12,44 @@
 
 #include "libft.h"
 
+int	get_diff(const void *s1, const void *s2)
+{
+	size_t			counter;
+	unsigned char	*s1p;
+	unsigned char	*s2p;
+
+	s1p = (unsigned char *)s1;
+	s2p = (unsigned char *)s2;
+	counter = 8;
+	while (counter-- && *s1p++ == *s2p++)
+		;
+	return (*(s1p - 1) - *(s2p - 1));
+}
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			offset;
-	unsigned char	*s1_c;
-	unsigned char	*s2_c;
+	unsigned long int	*s1p;
+	unsigned long int	*s2p;
+	unsigned int		counter;
+	unsigned int		bytes_per_word;
 
-	s1_c = (unsigned char *)s1;
-	s2_c = (unsigned char *)s2;
-	offset = 0;
-	while (offset < n)
+	counter = 3;
+	while ((1 << counter) < __WORDSIZE)
+		counter++;
+	bytes_per_word = (1 << (counter - 3));
+	while (n & (bytes_per_word - 1))
 	{
-		if (s1_c[offset] != s2_c[offset])
-			return (s1_c[offset] - s2_c[offset]);
-		offset++;
+		if (*((unsigned char *)s1++) != *((unsigned char *)s2++))
+			return (*((unsigned char *)s1 - 1) - *((unsigned char *)s2 - 1));
+		n--;
+	}
+	n >>= (counter - 3);
+	s1p = (unsigned long int *)s1;
+	s2p = (unsigned long int *)s2;
+	while (n--)
+	{
+		if (*s1p++ ^ *s2p++)
+			return (get_diff(s1p - 1, s2p - 1));
 	}
 	return (0);
 }
