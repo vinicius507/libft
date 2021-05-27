@@ -49,6 +49,8 @@ static char	*worddup(const char *s, size_t len)
 	size_t	offset;
 
 	str = malloc(len + 1);
+	if (str == NULL)
+		return (NULL);
 	offset = 0;
 	while (offset < len)
 	{
@@ -57,6 +59,17 @@ static char	*worddup(const char *s, size_t len)
 	}
 	str[offset] = '\0';
 	return (str);
+}
+
+static void	*kill(char **res, size_t stop)
+{
+	size_t	counter;
+
+	counter = 0;
+	while (counter < stop)
+		free(res[counter]);
+	free(res);
+	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
@@ -79,7 +92,8 @@ char	**ft_split(const char *s, char c)
 		if (len)
 		{
 			res[counter] = worddup(s, len);
-			counter++;
+			if (res[counter++] == NULL)
+				return (kill(res, counter - 1));
 		}
 		s += len + 1;
 	}
