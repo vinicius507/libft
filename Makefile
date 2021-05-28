@@ -38,4 +38,7 @@ fclean: clean
 
 re: fclean all
 
+so: $(OBJS)
+	@$(CC) $(CFLAGS) -shared -fpic $^ -o $(NAME:.a=.so)
+
 .PHONY: all clean fclean re

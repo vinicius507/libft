@@ -12,12 +12,24 @@
 
 #include "libft.h"
 
+static inline void	*wordwise_set(unsigned long int *s,
+	unsigned long int value,
+	size_t *n,
+	unsigned int bytes_per_word)
+{
+	while (*n >= bytes_per_word)
+	{
+		*s++ = value;
+		*n -= bytes_per_word;
+	}
+	return (s);
+}
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned long int	*ls;
 	unsigned long int	value;
-	size_t				offset;
 	size_t				counter;
+	size_t				offset;
 	unsigned int		bytes_per_word;
 
 	value = (c & 0xff);
@@ -26,14 +38,13 @@ void	*ft_memset(void *s, int c, size_t n)
 		value |= (value << (1 << counter++));
 	bytes_per_word = (1 << (counter - 3));
 	offset = 0;
-	while (n & (bytes_per_word - 1))
+	while (((unsigned long int)s & (bytes_per_word - 1)) && n)
 	{
 		*((char *)s + offset++) = (char)c;
 		n--;
 	}
-	ls = (unsigned long int *)(s + offset);
-	n >>= (counter - 3);
+	offset = wordwise_set(s + offset, value, &n, bytes_per_word) - s;
 	while (n--)
-		*ls++ = value;
+		*((char *)s + offset++) = (char)c;
 	return (s);
 }
