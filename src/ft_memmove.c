@@ -36,7 +36,7 @@ static void	cpy_bwd(void *dest, const void *src, size_t n)
 	bytes_per_word = (1 << (counter - 3));
 	src += n;
 	dest += n;
-	while ((unsigned long int)dest & (bytes_per_word - 1))
+	while ((unsigned long int)dest & (bytes_per_word - 1) && n)
 	{
 		*((char *)--dest) = *((char *)--src);
 		n--;
