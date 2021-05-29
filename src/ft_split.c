@@ -40,7 +40,7 @@ static size_t	get_wordlen(const char *s, char c)
 	offset = 0;
 	while (s[offset] && s[offset] != c)
 		offset++;
-	return (offset++);
+	return (offset);
 }
 
 static char	*worddup(const char *s, size_t len)
