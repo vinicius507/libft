@@ -12,31 +12,43 @@
 
 #include "libft.h"
 
+static inline void	*wordcpy(unsigned long int *dest,
+	unsigned long int *src,
+	size_t *n,
+	unsigned int bytes_per_word)
+{
+	while (*n >= bytes_per_word)
+	{
+		*dest++ = *src++;
+		*n -= bytes_per_word;
+	}
+	return (dest);
+}
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	const unsigned long int	*srcp;
-	unsigned long int		*destp;
 	size_t					offset;
 	size_t					counter;
-	unsigned int			bytes_per_word;
+	unsigned int			bpw;
 
 	if (dest == src)
 		return (dest);
 	counter = 3;
 	while ((1 << counter) < __WORDSIZE)
 		counter++;
-	bytes_per_word = (1 << (counter - 3));
+	bpw = (1 << (counter - 3));
 	offset = 0;
-	while (n & (bytes_per_word - 1))
+	while ((unsigned long int)dest & (bpw - 1) && n)
 	{
 		*((char *)dest + offset) = *((char *)src + offset);
 		offset++;
 		n--;
 	}
-	srcp = (unsigned long int *)(src + offset);
-	destp = (unsigned long int *)(dest + offset);
-	n >>= (counter - 3);
+	offset = wordcpy(dest + offset, (void *)src + offset, &n, bpw) - dest;
 	while (n--)
-		*destp++ = *srcp++;
+	{
+		*(char *)(dest + offset) = *(char *)(src + offset);
+		offset++;
+	}
 	return (dest);
 }
