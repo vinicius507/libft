@@ -24,21 +24,30 @@ SRCS := $(addprefix $(SRCDIR)/,$(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@echo "Creating $@"
 	@ar rcs $@ $^
+	@echo "Done."
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
+	@echo "Compiled $@."
 
 clean:
+	@echo "Removing objects..."
 	@$(RM) -r $(OBJDIR)
+	@echo "Done"
 
 fclean: clean
+	@echo "Removing $(NAME)"
 	@$(RM) $(NAME)
+	@echo "Done"
 
 re: fclean all
 
 so: $(OBJS)
+	@echo "Building $(NAME:.a=.so)"
 	@$(CC) $(CFLAGS) -shared -fpic $^ -o $(NAME:.a=.so)
+	@echo "Done"
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re so
