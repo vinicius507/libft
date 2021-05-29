@@ -12,10 +12,21 @@
 
 #include "libft.h"
 
+static inline void	*wordcpy(unsigned long int *dest,
+	unsigned long int *src,
+	size_t *n,
+	unsigned int bytes_per_word)
+{
+	while (*n >= bytes_per_word)
+	{
+		*--dest = *--src;
+		*n -= bytes_per_word;
+	}
+	return (dest);
+}
+
 static void	cpy_bwd(void *dest, const void *src, size_t n)
 {
-	const unsigned long int	*srcp;
-	unsigned long int		*destp;
 	size_t					counter;
 	unsigned int			bytes_per_word;
 
@@ -25,16 +36,20 @@ static void	cpy_bwd(void *dest, const void *src, size_t n)
 	bytes_per_word = (1 << (counter - 3));
 	src += n;
 	dest += n;
-	while (n & (bytes_per_word - 1))
+	while ((unsigned long int)dest & (bytes_per_word - 1))
 	{
 		*((char *)--dest) = *((char *)--src);
 		n--;
 	}
-	n >>= (counter - 3);
-	srcp = (unsigned long int *)(src);
-	destp = (unsigned long int *)(dest);
+	counter = dest - wordcpy(dest, (void *)src, &n, bytes_per_word);
+	dest -= counter;
+	src -= counter;
 	while (n--)
-		*--destp = *--srcp;
+	{
+		dest--;
+		src--;
+		*(char *)dest = *(char *)src;
+	}
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
