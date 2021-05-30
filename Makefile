@@ -18,7 +18,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c \
 	   ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 	   ft_lstclear.c ft_lstiter.c ft_lstmap.c
-OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 SRCS := $(addprefix $(SRCDIR)/,$(SRC))
 
 all: $(NAME)
@@ -39,8 +39,8 @@ clean:
 	@echo "Done"
 
 fclean: clean
-	@echo "Removing $(NAME)"
-	@$(RM) $(NAME)
+	@echo "Removing $(NAME), $(NAME:.a=.so)"
+	@$(RM) $(NAME) $(NAME:.a=.so)
 	@echo "Done"
 
 re: fclean all
