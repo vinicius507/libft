@@ -2,6 +2,8 @@
 
 My very first library in C. Made for École 42.
 
+Some of the functions are ~~somewhat~~ optimized, others are not. This library is meant to be used on École 42 only.
+
 Content
 ---
 
@@ -12,6 +14,17 @@ Content
 | List Functions(Bonus) | ft_lstnew,  ft_lstadd_front,  ft_lstsize,  ft_lstlast,  ft_lstadd_back,  ft_lstdelone,  ft_lstclear,  ft_lstiter,  ft_lstmap |
 
 > Behavior of `libc` functions are defined in `man(3)`. The others are briefly mentioned below.
+
+Makefile
+---
+
+| Command | Usage |
+| :--- | ---: |
+| `make` | Equivalent to `make all` and `make libft.a`. Creates the library. |
+| `make clean` | Removes the object files. |
+| `make fclean` | Removes the object files and the library. |
+| `make re` | Invokes `fclean` rule and then `all`. |
+| `make so` | Creates a dynamic library(for tests purposes). |
 
 Behavior
 ---
