@@ -36,18 +36,18 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 clean:
 	@echo "Removing objects..."
 	@$(RM) -r $(OBJDIR)
-	@echo "Done"
+	@echo "Done."
 
 fclean: clean
 	@echo "Removing $(NAME), $(NAME:.a=.so)"
 	@$(RM) $(NAME) $(NAME:.a=.so)
-	@echo "Done"
+	@echo "Done."
 
 re: fclean all
 
 so: $(OBJS)
 	@echo "Building $(NAME:.a=.so)"
 	@$(CC) $(CFLAGS) -shared -fpic $^ -o $(NAME:.a=.so)
-	@echo "Done"
+	@echo "Done."
 
 .PHONY: all clean fclean re so
