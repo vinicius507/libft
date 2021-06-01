@@ -12,12 +12,47 @@
 
 #include "libft.h"
 
+static size_t	wordlen(const unsigned long int *word, const char *str)
+{
+	const char			*ptr;
+	unsigned long int	lo;
+	unsigned long int	hi;
+	unsigned long int	longword;
+	size_t				counter;
+
+	lo = 0x01010101L;
+	if (sizeof(longword) > 4)
+		lo |= (lo << 16) << 16;
+	hi = lo << 7;
+	while (1)
+	{
+		longword = *word++;
+		if ((longword - lo) & ~longword & hi)
+		{
+			ptr = (const char *)(word - 1);
+			counter = 0;
+			while (counter < sizeof(longword))
+			{
+				if (ptr[counter] == '\0')
+					return (ptr - str + counter);
+				counter++;
+			}
+		}
+	}
+}
+
 size_t	ft_strlen(const char *str)
 {
-	int	len;
+	const char				*ptr;
+	const unsigned long int	*word;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	ptr = str;
+	while ((unsigned long)ptr & (sizeof(unsigned long) - 1))
+	{
+		if (*ptr == '\0')
+			return (ptr - str);
+		ptr++;
+	}
+	word = (unsigned long int *)ptr;
+	return (wordlen(word, str));
 }
