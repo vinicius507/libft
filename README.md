@@ -62,3 +62,13 @@ Behavior
 | ft_lstclear | Same as ft_lstdelone but for all elements starting in `lst`. |
 | ft_lstiter | Iterates the list `lst` while applying the function `f` to each element. |
 | ft_lstmap | Iterates the list `lst` while applying the function `f` to each element. Creates a new list resulting of the successive applications of the function `f`. The `del` function is used to delete the content of an element if needed. |
+
+## Additional Functions
+
+| Function | Behavior |
+| :--- | ---: |
+| get_next_line<sup>[[1]](https://github.com/vinicius507/get_next_line)</sup> | Reads a line from the given file descriptor `fd`. |
+
+## References
+
+1. [Get Next Line](https://github.com/vinicius507/get_next_line).

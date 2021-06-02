@@ -22,6 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		get_next_line(int fd, char **line);
+
 void	*ft_memset(void *s, int c, size_t n);
 
 void	ft_bzero(void *s, size_t n);
@@ -107,5 +109,24 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*
+ * GET_NEXT_LINE
+ */
+
+typedef enum e_status
+{
+	ERROR = -1,
+	END_OF_FILE,
+	NEWLINE,
+}	t_status;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 8
+# endif
+
+# define OPEN_MAX 1024
+
+int		get_next_line(int fd, char **line);
 
 #endif
