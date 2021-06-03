@@ -111,10 +111,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/*
- * GET_NEXT_LINE
- */
-
 typedef enum e_status
 {
 	ERROR = -1,
@@ -126,7 +122,13 @@ typedef enum e_status
 #  define BUFFER_SIZE 8
 # endif
 
-# define OPEN_MAX 1024
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
+
+# if BUFFER_SIZE <= 0
+#  error BUFFER_SIZE needs to be a positive number.
+# endif
 
 int		get_next_line(int fd, char **line);
 

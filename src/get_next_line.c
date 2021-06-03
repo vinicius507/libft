@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static void	kill(char **save)
+static void	reassign(char **save, char *dest)
 {
 	if (*save != NULL)
 	{
 		free(*save);
-		*save = NULL;
+		*save = dest;
 	}
 }
 
@@ -44,20 +44,26 @@ static t_status	get_line(char **save, char **line)
 	if ((*save)[size] == '\0')
 	{
 		*line = ft_strdup(*save);
-		kill(save);
+		reassign(save, NULL);
+		if (*line == NULL)
+			return (ERROR);
 		return (END_OF_FILE);
 	}
 	*line = ft_substr(*save, 0, size);
 	temp = ft_strdup((*save) + size + 1);
-	free(*save);
-	*save = temp;
+	if (temp == NULL || *line == NULL)
+		return (ERROR);
+	reassign(save, temp);
 	return (NEWLINE);
 }
 
 static t_status	output(char **save, char **line, ssize_t size_read)
 {
 	if (size_read == -1)
+	{
+		reassign(save, NULL);
 		return (ERROR);
+	}
 	else if (size_read == 0 && *save == NULL)
 	{
 		*line = ft_strdup("");
@@ -74,6 +80,8 @@ int	get_next_line(int fd, char **line)
 	char		*temp;
 
 	buffer = malloc(BUFFER_SIZE + 1);
+	if (buffer == NULL)
+		return (ERROR);
 	size_read = read(fd, buffer, BUFFER_SIZE);
 	while (size_read > 0)
 	{
@@ -83,8 +91,7 @@ int	get_next_line(int fd, char **line)
 		else
 		{
 			temp = ft_strjoin(save[fd], buffer);
-			free(save[fd]);
-			save[fd] = temp;
+			reassign(&(save[fd]), temp);
 		}
 		if (ft_strchr(save[fd], '\n'))
 			break ;

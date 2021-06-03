@@ -3,6 +3,9 @@ CC = clang
 RM = /bin/rm -f
 CFLAGS = -Wall -Wextra -Werror
 
+BUFFER_SIZE = 8
+GNL_FLAGS = -D BUFFER_SIZE=$(BUFFER_SIZE)
+
 INCLUDES =-I./includes
 SRCDIR =./src
 OBJDIR =./build
@@ -31,7 +34,12 @@ $(NAME): $(OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
-	@echo "Compiled $@."
+	@echo "Compiled $@"
+
+$(OBJDIR)/get_next_line.o: $(SRCDIR)/get_next_line.c
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(GNL_FLAGS) $< -c -o $@
+	@echo "Compiled $@"
 
 clean:
 	@echo "Removing objects..."
