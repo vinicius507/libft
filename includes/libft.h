@@ -139,6 +139,15 @@ void	ft_putendl_fd(char *s, int fd);
 /* Outputs the integer `n` to the given file descriptor. */
 void	ft_putnbr_fd(int s, int fd);
 
+/* Outputs the character `c` to stdout. */
+void	ft_putchar(char c);
+
+/* Outputs the string `s` to the stdout. */
+void	ft_putstr(char *s);
+
+/* Outputs the integer `n` to the stdout. */
+void	ft_putnbr(int s);
+
 /* Allocates and returns a new element. The variable `content` is initialized
  * with the value of the parameter `content`. The variable `next` is
  * initialized to NULL. */
@@ -187,12 +196,12 @@ typedef enum e_status
 #  define BUFFER_SIZE 8
 # endif
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
-# endif
-
 # if BUFFER_SIZE <= 0
 #  error BUFFER_SIZE needs to be a positive number.
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
 # endif
 
 /* Reads a line from the given file descriptor `fd`. */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 16:54:51 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/22 16:54:51 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/06/07 16:06:26 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/06/07 16:06:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define MAX_DIGITS 10
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr(int n)
 {
 	int		counter;
 	int		digits;
@@ -28,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 		digits++;
 	}
 	if (n < 0)
-		ft_putchar_fd('-', fd);
+		ft_putchar('-');
 	else
 		n *= -1;
 	nbr[digits] = '\0';
@@ -38,5 +38,5 @@ void	ft_putnbr_fd(int n, int fd)
 		n /= 10;
 	}
 	counter = -1;
-	ft_putstr_fd(nbr, fd);
+	ft_putstr(nbr);
 }
