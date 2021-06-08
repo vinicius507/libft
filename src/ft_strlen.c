@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	wordlen(const unsigned long int *word, const char *str)
+static inline size_t	wordlen(const unsigned long int *word, const char *str)
 {
 	const char			*ptr;
 	unsigned long int	lo;
