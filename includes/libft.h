@@ -109,6 +109,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
  * of `s1` and `s2`. */
 char	*ft_strjoin(const char *s1, const char *s2);
 
+/* Allocates and returns a new string, which is the result of the concatenation
+ * of `s1` and `s2`. */
+char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
+
 /* Allocates and returns a copy of `s1` with the characters specified in `set`
  * removed from the beginning and the end of the string. */
 char	*ft_strtrim(const char *s1, const char *set);
