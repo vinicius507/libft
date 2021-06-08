@@ -201,7 +201,7 @@ typedef enum e_status
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 1024
+#  define OPEN_MAX 8
 # endif
 
 /* Reads a line from the given file descriptor `fd`. */
