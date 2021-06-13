@@ -1,5 +1,6 @@
 NAME = libft.a
 CC = clang
+AR = ar rcs
 RM = /bin/rm -f
 CFLAGS = -Wall -Wextra -Werror
 
@@ -30,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Creating $@"
-	@ar rcs $@ $^
+	@$(AR) $@ $^
 	@echo "Done."
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
