@@ -35,7 +35,7 @@ static int	linelen(char *line)
 	return (len);
 }
 
-static t_status	get_line(char **save, char **line)
+static t_gnlstatus	get_line(char **save, char **line)
 {
 	size_t	size;
 	char	*temp;
@@ -46,23 +46,23 @@ static t_status	get_line(char **save, char **line)
 		*line = ft_strdup(*save);
 		reassign(save, NULL);
 		if (*line == NULL)
-			return (ERROR);
+			return (GNL_ERROR);
 		return (END_OF_FILE);
 	}
 	*line = ft_substr(*save, 0, size);
 	temp = ft_strdup((*save) + size + 1);
 	if (temp == NULL || *line == NULL)
-		return (ERROR);
+		return (GNL_ERROR);
 	reassign(save, temp);
 	return (NEWLINE);
 }
 
-static t_status	output(char **save, char **line, ssize_t size_read)
+static t_gnlstatus	output(char **save, char **line, ssize_t size_read)
 {
 	if (size_read == -1)
 	{
 		reassign(save, NULL);
-		return (ERROR);
+		return (GNL_ERROR);
 	}
 	else if (size_read == 0 && *save == NULL)
 	{
@@ -81,7 +81,7 @@ int	get_next_line(int fd, char **line)
 
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (buffer == NULL)
-		return (ERROR);
+		return (GNL_ERROR);
 	size_read = read(fd, buffer, BUFFER_SIZE);
 	while (size_read > 0)
 	{

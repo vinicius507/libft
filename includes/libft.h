@@ -189,12 +189,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * if needed. */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-typedef enum e_status
+typedef enum e_gnlstatus
 {
-	ERROR = -1,
+	GNL_ERROR = -1,
 	END_OF_FILE,
 	NEWLINE,
-}	t_status;
+}	t_gnlstatus;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 8
