@@ -126,6 +126,10 @@ char	**ft_split(const char *s, char c);
  * argument. */
 char	*ft_itoa(int n);
 
+/* Allocates and returns a string representing the integer received as an
+ * argument in a specific base. */
+char	*ft_itoa_base(int n, char *base);
+
 /* Applies the function `f` to each character of the string `s` to create a new
  * string resulting from successive applications of `f`. */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
