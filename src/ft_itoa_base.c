@@ -29,7 +29,7 @@ static int	get_int_base(char *base)
 	return (int_base);
 }
 
-static char	*get_nbr_str(int n, int int_base, char *base, int size)
+static char	*get_nbr_str(int n, int int_base, char *base, size_t size)
 {
 	char	*str;
 
