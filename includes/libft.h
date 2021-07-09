@@ -126,9 +126,25 @@ char	**ft_split(const char *s, char c);
  * argument. */
 char	*ft_itoa(int n);
 
+/* Allocates and returns a string representing the long integer received as an
+ * argument. */
+char	*ft_ltoa(long int n);
+
+/* Allocates and returns a string representing the long long integer received
+* as an argument. */
+char	*ft_lltoa(long long int n);
+
 /* Allocates and returns a string representing the integer received as an
  * argument in a specific base. */
 char	*ft_itoa_base(int n, char *base);
+
+/* Allocates and returns a string representing the long integer received as an
+ * argument in a specific base. */
+char	*ft_ltoa_base(long int n, char *base);
+
+/* Allocates and returns a string representing the long long integer received
+* as an argument in a specific base. */
+char	*ft_lltoa_base(long long int n, char *base);
 
 /* Applies the function `f` to each character of the string `s` to create a new
  * string resulting from successive applications of `f`. */
