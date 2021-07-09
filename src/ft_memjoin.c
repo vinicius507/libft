@@ -16,6 +16,8 @@ void	*ft_memjoin(const void *m1, const void *m2, size_t size1, size_t size2)
 {
 	void	*m;
 
+	if (m1 == NULL || m2 == NULL)
+		return (NULL);
 	m = ft_calloc(size1 + size2, sizeof(char));
 	if (m == NULL)
 		return (NULL);
