@@ -45,6 +45,9 @@ void	*ft_memchr(const void *s, int c, size_t n);
 /* Compares `n` bytes from `s1` and `s2`. */
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
+/* Joins scetors of memory m1 and m2 */
+void	*ft_memjoin(const void *m1, const void *m2, size_t size1, size_t size2);
+
 /* Gets the size of a string. */
 size_t	ft_strlen(const char *str);
 
