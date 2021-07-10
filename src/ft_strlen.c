@@ -21,7 +21,7 @@ static inline size_t	wordlen(const unsigned long int *word, const char *str)
 	size_t				counter;
 
 	lo = 0x01010101L;
-	if (sizeof(longword) > 4)
+	if (sizeof(unsigned long int) > 4)
 		lo |= (lo << 16) << 16;
 	hi = lo << 7;
 	while (1)
