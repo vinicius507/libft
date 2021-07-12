@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_striter(const char *s, char (*f)(char))
+char	*ft_striter(const char *s, int (*f)(int))
 {
 	char	*res;
 	size_t	size;
@@ -27,7 +27,7 @@ char	*ft_striter(const char *s, char (*f)(char))
 	offset = 0;
 	while (offset < size)
 	{
-		res[offset] = f(s[offset]);
+		res[offset] = (char)f(s[offset]);
 		offset++;
 	}
 	res[offset] = '\0';
