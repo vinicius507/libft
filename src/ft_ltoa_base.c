@@ -33,7 +33,7 @@ static char	*get_nbr_str(long int n, int int_base, char *base, size_t size)
 {
 	char	*str;
 
-	str = ft_calloc(size, sizeof(char));
+	str = ft_calloc(size + 1, sizeof(char));
 	if (n >= 0)
 	{
 		while (size--)
