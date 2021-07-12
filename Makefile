@@ -25,7 +25,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_lstclear.c ft_lstiter.c ft_lstmap.c get_next_line.c \
 	   ft_strnjoin.c ft_putchar.c ft_putstr.c ft_putnbr.c \
 	   ft_itoa_base.c ft_ltoa.c ft_lltoa.c ft_ltoa_base.c \
-	   ft_lltoa_base.c ft_memjoin.c ft_uitoa.c
+	   ft_lltoa_base.c ft_memjoin.c ft_uitoa.c ft_ultoa.c \
+	   ft_ulltoa.c
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 SRCS := $(addprefix $(SRCDIR)/,$(SRC))
 
