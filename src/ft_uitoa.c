@@ -14,9 +14,9 @@
 
 char	*ft_uitoa(unsigned int n)
 {
-	int		temp;
-	char	*num;
-	size_t	size;
+	unsigned int		temp;
+	char				*num;
+	size_t				size;
 
 	size = 1;
 	temp = n / 10;
