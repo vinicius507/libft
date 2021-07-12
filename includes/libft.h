@@ -137,6 +137,10 @@ char	*ft_ltoa(long int n);
 * as an argument. */
 char	*ft_lltoa(long long int n);
 
+/* Allocates and returns a string representing the unsigned integer received as
+ * an argument. */
+char	*ft_uitoa(unsigned int n);
+
 /* Allocates and returns a string representing the integer received as an
  * argument in a specific base. */
 char	*ft_itoa_base(int n, char *base);
