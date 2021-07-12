@@ -169,6 +169,10 @@ char	*ft_uitoa_base(unsigned int n, char *base);
  * received as an argument in a specific base. */
 char	*ft_ultoa_base(unsigned long int n, char *base);
 
+/* Allocates and returns a string representing the unsigned long long integer
+ * received as an argument in a specific base. */
+char	*ft_ulltoa_base(unsigned long long int n, char *base);
+
 /* Applies the function `f` to each character of the string `s` to create a new
  * string resulting from successive applications of `f`. */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
