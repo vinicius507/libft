@@ -169,6 +169,10 @@ char	*ft_uitoa_base(unsigned int n, char *base);
  * string resulting from successive applications of `f`. */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
+/* Applies the function `f` to each character of the string `s` to create a new
+ * string resulting from successive applications of `f`. */
+char	*ft_striter(const char *s, char (*f)(char));
+
 /* Outputs the character `c` to the given file descriptor. */
 void	ft_putchar_fd(char c, int fd);
 
