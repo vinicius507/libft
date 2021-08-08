@@ -73,6 +73,10 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
  * strings are different. */
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
+/* Compares `s1` and `s2`, returns a non-zero value if the strings are
+ * different. */
+int			ft_strcmp(const char *s1, const char *s2);
+
 /* Converts the initial portion of the string `nptr` to an `int`. */
 int			ft_atoi(const char *nptr);
 
