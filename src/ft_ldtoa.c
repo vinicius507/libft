@@ -20,7 +20,7 @@ static void	get_nbr_str(char *str, long double n,
 
 	temp = n;
 	offset = size_int;
-	while (--offset >= (n < 0))
+	while (offset-- > (n < 0))
 	{
 		if (n >= 0)
 			str[offset] = (int)(temp % 10) + '0';
