@@ -19,18 +19,18 @@ static void	get_nbr_str(char *str, long double n,
 	size_t	offset;
 
 	temp = n;
-	offset = n < 0;
-	while (offset < size_int)
+	offset = size_int;
+	while (--offset >= (n < 0))
 	{
 		if (n >= 0)
-			str[offset++] = (int)(temp % 10) + '0';
+			str[offset] = (int)(temp % 10) + '0';
 		else
-			str[offset++] = (int)((temp % 10) * -1) + '0';
+			str[offset] = (int)((temp % 10) * -1) + '0';
 		temp /= 10;
 	}
 	if (n < 0)
 		n *= -1;
-	offset += 1;
+	offset = size_int + 1;
 	while (precision--)
 	{
 		n = n - (int)n;
