@@ -145,6 +145,10 @@ char		*ft_ltoa(long int n);
 * as an argument. */
 char		*ft_lltoa(long long int n);
 
+/* Allocates and returns a string representing the long double received as an
+ * argument up to a certain precision. */
+char		*ft_ldtoa(long double n, size_t precision);
+
 /* Allocates and returns a string representing the unsigned integer received as
  * an argument. */
 char		*ft_uitoa(unsigned int n);
