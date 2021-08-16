@@ -268,7 +268,7 @@ typedef enum e_gnlstatus
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 8
+#  define OPEN_MAX 64
 # endif
 
 /* Reads a line from the given file descriptor `fd`. */
