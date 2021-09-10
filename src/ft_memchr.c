@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-static inline void	*wordchr(const unsigned long int *word, unsigned long int
-	mask, size_t *n)
+static inline void	*wordchr(const unsigned long int *word,
+	unsigned long int mask, size_t *n)
 {
 	unsigned long int	hi;
 	unsigned long int	lo;
