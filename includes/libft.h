@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/17 21:02:26 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/10/12 14:36:32 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -273,5 +274,29 @@ typedef enum e_gnlstatus
 
 /* Reads a line from the given file descriptor `fd`. */
 int			get_next_line(int fd, char **line);
+
+/* Write formated output to stdout. */
+int			ft_printf(const char *str, ...);
+
+/* Write formated output to stdout. */
+int			ft_vprintf(const char *format, va_list ap);
+
+/* Write formated output to specific fd. */
+int			ft_dprintf(int fd, const char *format, ...);
+
+/* Write formated output to specific fd. */
+int			ft_vdprintf(int fd, const char *format, va_list ap);
+
+/* Create formated string. */
+int			ft_sprintf(char *buf, const char *format, ...);
+
+/* Create formated string. */
+int			ft_vsprintf(char *buf, const char *format, va_list ap);
+
+/* Creates and allocates memory for a formated string. */
+int			ft_vasprintf(char **buf, const char *format, va_list ap);
+
+/* Creates and allocates memory for a formated string. */
+int			ft_asprintf(char **buf, const char *format, ...);
 
 #endif
