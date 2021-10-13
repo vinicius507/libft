@@ -44,40 +44,29 @@ SRCS := $(addprefix $(SRCDIR)/,$(SRC)) $(addprefix $(FT_PRINTFDIR)/,$(FT_PRINTFS
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "Creating $@"
-	@$(AR) $@ $^
-	@echo "Done."
+	$(AR) $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
-	@echo "Compiled $@"
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
 
 $(OBJDIR)/%.o: $(FT_PRINTFDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
-	@echo "Compiled $@"
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
 
 $(OBJDIR)/get_next_line.o: $(SRCDIR)/get_next_line.c
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(GNL_FLAGS) $< -c -o $@
-	@echo "Compiled $@"
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) $(GNL_FLAGS) $< -c -o $@
 
 clean:
-	@echo "Removing objects..."
-	@$(RM) -r $(OBJDIR)
-	@echo "Done."
+	$(RM) -r $(OBJDIR)
 
 fclean: clean
-	@echo "Removing $(NAME), $(NAME:.a=.so)"
-	@$(RM) $(NAME) $(NAME:.a=.so)
-	@echo "Done."
+	$(RM) $(NAME) $(NAME:.a=.so)
 
 re: fclean all
 
 so: $(OBJS)
-	@echo "Building $(NAME:.a=.so)"
-	@$(CC) $(CFLAGS) -shared -fpic $^ -o $(NAME:.a=.so)
-	@echo "Done."
+	$(CC) $(CFLAGS) -shared -fpic $^ -o $(NAME:.a=.so)
 
 .PHONY: all clean fclean re so
