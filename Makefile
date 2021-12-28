@@ -27,7 +27,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_itoa_base.c ft_ltoa.c ft_lltoa.c ft_ltoa_base.c \
 	   ft_lltoa_base.c ft_memjoin.c ft_uitoa.c ft_ultoa.c \
 	   ft_ulltoa.c ft_uitoa_base.c ft_striter.c ft_ultoa_base.c \
-	   ft_ulltoa_base.c ft_atold.c ft_strcmp.c ft_ldtoa.c
+	   ft_ulltoa_base.c ft_atold.c ft_strcmp.c ft_ldtoa.c \
+	   ft_abs.c
 
 FT_PRINTFDIR = $(SRCDIR)/ft_printf
 FT_PRINTFSRCS = apply.c apply_char.c apply_hexa.c apply_int.c \

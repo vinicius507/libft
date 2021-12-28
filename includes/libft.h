@@ -299,4 +299,7 @@ int			ft_vasprintf(char **buf, const char *format, va_list ap);
 /* Creates and allocates memory for a formated string. */
 int			ft_asprintf(char **buf, const char *format, ...);
 
+/* Returns the absolute value of a number. */
+uint		ft_abs(int n);
+
 #endif
