@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/12/28 23:32:21 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/12/30 03:09:20 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ int			ft_strcmp(const char *s1, const char *s2);
 
 /* Converts the initial portion of the string `nptr` to an `int`. */
 int			ft_atoi(const char *nptr);
+
+/* Converts the initial portion of the string `nptr` to an `int`. */
+long long	ft_atoll(const char *nptr);
 
 /* Converts the initial portion of the string `nptr` to a `long double`. */
 long double	ft_atold(const char *nptr);
