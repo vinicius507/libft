@@ -18,10 +18,7 @@ char	*ft_ultoa(unsigned long int n)
 	char					*num;
 	size_t					size;
 
-	if (n >= 0)
-		size = 1;
-	else
-		size = 2;
+	size = 1;
 	temp = n / 10;
 	while (temp)
 	{

@@ -45,8 +45,6 @@ char	*ft_ldtoa(long double n, size_t precision)
 	char	*str;
 	size_t	size_int;
 
-	if (precision < 0)
-		return (NULL);
 	size_int = 1 + (n < 0);
 	temp = n / 10;
 	while (temp)
