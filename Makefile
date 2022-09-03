@@ -7,11 +7,13 @@ CFLAGS = -Wall -Wextra -Werror
 BUFFER_SIZE = 8
 GNL_FLAGS = -D BUFFER_SIZE=$(BUFFER_SIZE)
 
-INCLUDESDIR = ./includes
-SRCDIR = ./src
+SRCDIR = ./libft
+INCLUDESDIR = ./includes .
 OBJDIR = ./build
 
-INCLUDES = -I$(INCLUDESDIR)
+INCLUDES = $(addprefix -I,$(INCLUDESDIR))
+
+vpath %.c libft libft/ft_string libft/ft_printf
 SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
 	   ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
@@ -28,34 +30,26 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_lltoa_base.c ft_memjoin.c ft_uitoa.c ft_ultoa.c \
 	   ft_ulltoa.c ft_uitoa_base.c ft_striter.c ft_ultoa_base.c \
 	   ft_ulltoa_base.c ft_atold.c ft_strcmp.c ft_ldtoa.c \
-	   ft_abs.c ft_atoll.c
+	   ft_abs.c ft_atoll.c apply.c apply_char.c apply_hexa.c \
+	   apply_int.c apply_literal.c apply_ptr.c apply_str.c apply_uint.c \
+	   arg_parser.c flags_parser.c format_char.c format_current.c \
+	   format_hexa.c format_int.c format_literal.c format_ptr.c \
+	   format_str.c format_uint.c ft_asprintf.c ft_dprintf.c \
+	   ft_printf.c ft_sprintf.c length_parser.c precision_parser.c \
+	   utils.c width_parser.c
 
-FT_PRINTFDIR = $(SRCDIR)/ft_printf
-FT_PRINTFSRCS = apply.c apply_char.c apply_hexa.c apply_int.c \
-				apply_literal.c apply_ptr.c apply_str.c apply_uint.c \
-				arg_parser.c flags_parser.c format_char.c format_current.c \
-				format_hexa.c format_int.c format_literal.c format_ptr.c \
-				format_str.c format_uint.c ft_asprintf.c ft_dprintf.c \
-				ft_printf.c ft_sprintf.c length_parser.c precision_parser.c \
-				utils.c width_parser.c
-
-OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o)) $(addprefix $(OBJDIR)/,$(FT_PRINTFSRCS:%.c=%.o))
-SRCS := $(addprefix $(SRCDIR)/,$(SRC)) $(addprefix $(FT_PRINTFDIR)/,$(FT_PRINTFSRCS))
+OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: %.c
 	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
 
-$(OBJDIR)/%.o: $(FT_PRINTFDIR)/%.c
-	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
-
-$(OBJDIR)/get_next_line.o: $(SRCDIR)/get_next_line.c
+$(OBJDIR)/get_next_line.o: get_next_line.c
 	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) $(INCLUDES) $(GNL_FLAGS) $< -c -o $@
 

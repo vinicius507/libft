@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/12/30 03:09:20 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:15:43 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,34 +50,6 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memjoin(const void *m1, const void *m2,
 				size_t size1, size_t size2);
 
-/* Gets the size of a string. */
-size_t		ft_strlen(const char *str);
-
-/* Copies up to `size - 1` characters from `src` to `dest`, NUL-terminating the
- * result. */
-size_t		ft_strlcpy(char *dest, const char *src, size_t size);
-
-/* Appends up to `size - strlen(dest) - 1` bytes from `src` to `dest`. */
-size_t		ft_strlcat(char *dest, const char *src, size_t size);
-
-/* Finds the first occurrence character `c` in the string `s`. */
-char		*ft_strchr(const char *s, int c);
-
-/* Finds the last occurrence character `c` in the string `s`. */
-char		*ft_strrchr(const char *s, int c);
-
-/* Finds the first occurrence of the string `little` in the string `big`, where
- * no more than `len` characters are searched. */
-char		*ft_strnstr(const char *big, const char *little, size_t len);
-
-/* Compares `n` characters from `s1` and `s2`, returns a non-zero value if the
- * strings are different. */
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
-
-/* Compares `s1` and `s2`, returns a non-zero value if the strings are
- * different. */
-int			ft_strcmp(const char *s1, const char *s2);
-
 /* Converts the initial portion of the string `nptr` to an `int`. */
 int			ft_atoi(const char *nptr);
 
@@ -112,30 +84,6 @@ int			ft_tolower(int c);
 
 /* Allocates `nmemb * size` bytes of memory. The memory is set to zero. */
 void		*ft_calloc(size_t nmemb, size_t size);
-
-/* Duplicates and returns an allocated duplicate of `s`. */
-char		*ft_strdup(const char *s);
-
-/* Allocates and returns a substring from the string `s`. The substring begins
- * at index `start` and is of maximum size `len`. */
-char		*ft_substr(const char *s, unsigned int start, size_t len);
-
-/* Allocates and returns a new string, which is the result of the concatenation
- * of `s1` and `s2`. */
-char		*ft_strjoin(const char *s1, const char *s2);
-
-/* Allocates and returns a new string, which is the result of the concatenation
- * of `s1` and `s2`. */
-char		*ft_strnjoin(const char *s1, const char *s2, size_t n);
-
-/* Allocates and returns a copy of `s1` with the characters specified in `set`
- * removed from the beginning and the end of the string. */
-char		*ft_strtrim(const char *s1, const char *set);
-
-/* Allocates and returns an array of strings obtained by splitting `s` using
- * the character `c` as a delimiter. The array must be ended by a NULL pointer.
- * */
-char		**ft_split(const char *s, char c);
 
 /* Allocates and returns a string representing the integer received as an
  * argument. */
@@ -188,14 +136,6 @@ char		*ft_ultoa_base(unsigned long int n, char *base);
 /* Allocates and returns a string representing the unsigned long long integer
  * received as an argument in a specific base. */
 char		*ft_ulltoa_base(unsigned long long int n, char *base);
-
-/* Applies the function `f` to each character of the string `s` to create a new
- * string resulting from successive applications of `f`. */
-char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-
-/* Applies the function `f` to each character of the string `s` to create a new
- * string resulting from successive applications of `f`. */
-char		*ft_striter(const char *s, int (*f)(int));
 
 /* Outputs the character `c` to the given file descriptor. */
 void		ft_putchar_fd(char c, int fd);
