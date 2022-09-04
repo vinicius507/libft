@@ -5,7 +5,6 @@ RM = /bin/rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 BUFFER_SIZE = 8
-GNL_FLAGS = -D BUFFER_SIZE=$(BUFFER_SIZE)
 
 SRCDIR = ./libft
 INCLUDESDIR = ./includes .
@@ -13,7 +12,7 @@ OBJDIR = ./build
 
 INCLUDES = $(addprefix -I,$(INCLUDESDIR))
 
-vpath %.c libft libft/ft_string libft/ft_printf
+vpath %.c libft libft/ft_string libft/ft_io libft/ft_io/ft_printf
 SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
 	   ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
@@ -48,10 +47,6 @@ $(NAME): $(OBJS)
 $(OBJDIR)/%.o: %.c
 	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
-
-$(OBJDIR)/get_next_line.o: get_next_line.c
-	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) $(GNL_FLAGS) $< -c -o $@
 
 clean:
 	$(RM) -r $(OBJDIR)

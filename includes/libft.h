@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:15:43 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:16:25 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,28 +137,6 @@ char		*ft_ultoa_base(unsigned long int n, char *base);
  * received as an argument in a specific base. */
 char		*ft_ulltoa_base(unsigned long long int n, char *base);
 
-/* Outputs the character `c` to the given file descriptor. */
-void		ft_putchar_fd(char c, int fd);
-
-/* Outputs the string `s` to the given file descriptor. */
-void		ft_putstr_fd(char *s, int fd);
-
-/* Outputs the string `s` to the given file descriptor, followed by a newline.
- * */
-void		ft_putendl_fd(char *s, int fd);
-
-/* Outputs the integer `n` to the given file descriptor. */
-void		ft_putnbr_fd(int s, int fd);
-
-/* Outputs the character `c` to stdout. */
-void		ft_putchar(char c);
-
-/* Outputs the string `s` to the stdout. */
-void		ft_putstr(char *s);
-
-/* Outputs the integer `n` to the stdout. */
-void		ft_putnbr(int s);
-
 /* Allocates and returns a new element. The variable `content` is initialized
  * with the value of the parameter `content`. The variable `next` is
  * initialized to NULL. */
@@ -195,52 +173,6 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  * function `f`. The `del` function is used to delete the content of an element
  * if needed. */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-typedef enum e_gnlstatus
-{
-	GNL_ERROR = -1,
-	END_OF_FILE,
-	NEWLINE,
-}	t_gnlstatus;
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 8
-# endif
-
-# if BUFFER_SIZE <= 0
-#  error BUFFER_SIZE needs to be a positive number.
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 64
-# endif
-
-/* Reads a line from the given file descriptor `fd`. */
-int			get_next_line(int fd, char **line);
-
-/* Write formated output to stdout. */
-int			ft_printf(const char *str, ...);
-
-/* Write formated output to stdout. */
-int			ft_vprintf(const char *format, va_list ap);
-
-/* Write formated output to specific fd. */
-int			ft_dprintf(int fd, const char *format, ...);
-
-/* Write formated output to specific fd. */
-int			ft_vdprintf(int fd, const char *format, va_list ap);
-
-/* Create formated string. */
-int			ft_sprintf(char *buf, const char *format, ...);
-
-/* Create formated string. */
-int			ft_vsprintf(char *buf, const char *format, va_list ap);
-
-/* Creates and allocates memory for a formated string. */
-int			ft_vasprintf(char **buf, const char *format, va_list ap);
-
-/* Creates and allocates memory for a formated string. */
-int			ft_asprintf(char **buf, const char *format, ...);
 
 /* Returns the absolute value of a number. */
 uint		ft_abs(int n);
