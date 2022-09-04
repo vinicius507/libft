@@ -6,12 +6,19 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:55:30 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/15 00:13:06 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:19:57 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft/ft_mem.h>
 
+/**
+ * @brief Copies `n` bytes of from memory area `src` to memory area `dest`.
+ * @param dest The destination memory area
+ * @param src The source memory area
+ * @param n The number of bytes to be copied
+ * @return A pointer to the copied area
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char					*ptr;

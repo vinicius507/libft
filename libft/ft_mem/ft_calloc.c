@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 13:21:54 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:59 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/18 15:20:01 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/04 15:19:37 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <limits.h>
 #include <libft/ft_mem.h>
 
-char	*ft_ulltoa(unsigned long long int n)
+/**
+ * @brief Allocates memory and sets it to zero.
+ * @param nmemb The number of elements to allocate to
+ * @param size The number of bytes to allocate for each member
+ * @return A pointer to the allocated memory
+ */
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned long long int		temp;
-	char						*num;
-	size_t						size;
+	void	*ptr;
 
-	size = 1;
-	temp = n / 10;
-	while (temp)
-	{
-		size++;
-		temp /= 10;
-	}
-	num = ft_calloc(size + 1, sizeof(char));
-	if (num == NULL)
+	if (nmemb * size > INT_MAX)
 		return (NULL);
-	while (size--)
-	{
-		num[size] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (num);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:08:46 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/03 14:41:08 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:20:18 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <libft/ft_mem.h>
 #include <libft/ft_string.h>
 
 static int	get_int_base(char *base)

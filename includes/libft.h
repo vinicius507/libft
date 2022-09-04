@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:16:25 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:18:08 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-/* Sets `n` bytes of `s` to `c`. */
-void		*ft_memset(void *s, int c, size_t n);
-
-/* Sets `n` bytes of `s`to `\0`. */
-void		ft_bzero(void *s, size_t n);
-
-/* Copies `n` bytes of `src` to `dest`. Overlapping behavior is undefined. */
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-
-/* Copies a max of `n` bytes of `src` to `dest`, stopping if it copies the
- * byte  `c`. Overlapping behavior is undefined. */
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
-
-/* Copies `n` bytes from `src` to `dest`. Overlapping behavior is defined. */
-void		*ft_memmove(void *dest, const void *src, size_t n);
-
-/* Finds the byte `c` in `s`. */
-void		*ft_memchr(const void *s, int c, size_t n);
-
-/* Compares `n` bytes from `s1` and `s2`. */
-int			ft_memcmp(const void *s1, const void *s2, size_t n);
-
-/* Joins scetors of memory m1 and m2 */
-void		*ft_memjoin(const void *m1, const void *m2,
-				size_t size1, size_t size2);
 
 /* Converts the initial portion of the string `nptr` to an `int`. */
 int			ft_atoi(const char *nptr);
@@ -81,9 +55,6 @@ int			ft_toupper(int c);
 /* If `c` is a uppercase ASCII character, it returns it's lowercase equivalent.
  * */
 int			ft_tolower(int c);
-
-/* Allocates `nmemb * size` bytes of memory. The memory is set to zero. */
-void		*ft_calloc(size_t nmemb, size_t size);
 
 /* Allocates and returns a string representing the integer received as an
  * argument. */

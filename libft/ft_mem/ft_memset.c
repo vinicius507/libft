@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 17:56:07 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/12 17:56:09 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/12 17:56:19 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/04 15:42:49 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft/ft_mem.h>
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+/**
+ * @brief Sets `n` bytes of memory area `s` to the character `c`.
+ * @param s
+ * @param c
+ * @param n
+ * @return A pointer to the start of the set memory area
+ */
+void	*ft_memset(void *s, int c, size_t n)
 {
-	void	*ptr;
-	size_t	distance;
+	unsigned char	*ptr;
 
-	ptr = ft_memchr(src, c, n);
-	if (ptr != NULL)
-	{
-		distance = (size_t)ptr - (size_t)src + 1;
-		return (ft_memcpy(dest, src, distance) + distance);
-	}
-	ft_memcpy(dest, src, n);
-	return (NULL);
+	if (s == NULL)
+		return (NULL);
+	if (n == 0)
+		return (s);
+	ptr = (unsigned char *)s;
+	while (n--)
+		ptr[n] = (unsigned char)c;
+	return (s);
 }

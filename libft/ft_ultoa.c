@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 13:19:46 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/07/12 13:19:46 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:19:54 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <libft/ft_mem.h>
 
 char	*ft_ultoa(unsigned long int n)
 {
