@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 10:33:32 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/18 10:33:32 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:07 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <libft/ft_ctype.h>
 
 static int	ft_isspace(int c)
 {
@@ -20,6 +21,11 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
+/**
+ * @brief Converts the initial portion of the string `nptr` to an `int`.
+ * @param nptr
+ * @return The `int` representation of the inital portion of the string `nptr`
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	num;

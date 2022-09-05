@@ -6,13 +6,20 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 13:21:54 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:59 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:44:11 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <libft/ft_mem.h>
 
+/**
+ * @brief Converts an `unsigned long long int` value `n` to a
+ * string.
+ * @param n
+ * @return The string form of the `unsigned long long int`
+ * value `n`
+ */
 char	*ft_ulltoa(unsigned long long int n)
 {
 	unsigned long long int		temp;

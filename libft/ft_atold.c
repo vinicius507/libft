@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:11:10 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/07/25 15:11:10 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:01 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <libft/ft_ctype.h>
 
 static int	ft_isspace(int c)
 {
@@ -39,6 +40,12 @@ static long double	get_decimal(const char *nptr, int sign)
 	return (num);
 }
 
+/**
+ * @brief Converts the initial portion of the string `nptr` to a `long double`.
+ * @param nptr
+ * @return The `long double` representation of the inital portion of the string
+ * `nptr`
+ */
 long double	ft_atold(const char *nptr)
 {
 	long double	num;

@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 13:06:27 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:24 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:38:13 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ static char	*get_nbr_str(int n, int int_base, char *base, size_t size)
 	return (str);
 }
 
+/**
+ * @brief Converts an integer value `n` to a string using the string base
+ * `base`.
+ * @param n
+ * @param base A string with the characters representing the base. The numeric
+ * base is the the number of characters in it.
+ * @return The string form of the integer `n` in its `base` form
+ */
 char	*ft_itoa_base(int n, char *base)
 {
 	char	*res;

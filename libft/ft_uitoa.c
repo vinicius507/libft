@@ -6,13 +6,18 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:33:09 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:49 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:38:37 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <libft/ft_mem.h>
 
+/**
+ * @brief Converts an `unsigned int` value `n` to a string.
+ * @param n
+ * @return The string form of the `unsigned int` value `n`
+ */
 char	*ft_uitoa(unsigned int n)
 {
 	unsigned int		temp;

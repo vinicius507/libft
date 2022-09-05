@@ -6,11 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:07:17 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:20:30 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:34:19 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <libft/ft_mem.h>
 
 static void	get_nbr_str(char *str, long double n,
@@ -40,6 +40,12 @@ static void	get_nbr_str(char *str, long double n,
 	}
 }
 
+/**
+ * @brief Converts a `long double` value `n` to a string.
+ * @param n
+ * @param precision The decimal precision of the string result
+ * @return The string form of the integer `n`
+ */
 char	*ft_ldtoa(long double n, size_t precision)
 {
 	int		temp;

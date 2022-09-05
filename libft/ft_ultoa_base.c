@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:08:46 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:20:18 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:43:38 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ static int	get_int_base(char *base)
 	return (int_base);
 }
 
+/**
+ * @brief Converts a `unsigned long int` value `n` to a
+ * string using the string base `base`.
+ * @param n
+ * @param base A string with the characters representing the base. The numeric
+ * base is the the number of characters in it.
+ * @return The string form of the `unsigned long int` value
+ * `n` in its `base` form
+ */
 char	*ft_ultoa_base(unsigned long int n, char *base)
 {
 	char					*res;

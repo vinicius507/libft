@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 03:07:48 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/12/30 03:08:27 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:25 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <libft/ft_ctype.h>
 
 static int	ft_isspace(int c)
 {
@@ -20,6 +21,12 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
+/**
+ * @brief Converts the initial portion of the string `nptr` to a `long int`.
+ * @param nptr
+ * @return The `long int` representation of the inital portion of the string
+ * `nptr`
+ */
 long long int	ft_atoll(const char *nptr)
 {
 	long long int	num;

@@ -6,11 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:34:54 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/07/09 10:34:54 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:39:09 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static void	get_nbr_str(char *str, long long int n, size_t size)
 {
@@ -34,6 +34,11 @@ static void	get_nbr_str(char *str, long long int n, size_t size)
 	}
 }
 
+/**
+ * @brief Converts a `long long int` value `n` to a string.
+ * @param n
+ * @return The string form of the `long long int` value `n`
+ */
 char	*ft_lltoa(long long int n)
 {
 	long long int		temp;

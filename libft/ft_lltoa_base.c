@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:39:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:42 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:40:15 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ static char	*get_nbr_str(long long int n, int int_base, char *base, size_t size)
 	return (str);
 }
 
+/**
+ * @brief Converts a `long long int` value `n` to a string using the string
+ * base `base`.
+ * @param n
+ * @param base A string with the characters representing the base. The numeric
+ * base is the the number of characters in it.
+ * @return The string form of the `long long int` value `n`
+ * in its `base` form
+ */
 char	*ft_lltoa_base(long long int n, char *base)
 {
 	char				*res;
