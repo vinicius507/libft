@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 15:24:21 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/23 15:24:21 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/23 14:44:58 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/05 16:13:46 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <libft/ft_lst.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+/**
+ * @brief Adds a `t_list` node to the end of the list.
+ * @param lst A pointer to the linked list
+ * @param new_node The new node
+ */
+void	ft_lstadd_back(t_list **lst, t_list *new_node)
 {
 	t_list	*temp;
-	t_list	*first;
 
-	first = NULL;
-	while (lst != NULL)
+	if (lst == NULL || new_node == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new_node;
+	else
 	{
-		temp = ft_lstnew(f(lst->content));
-		if (temp == NULL)
-		{
-			ft_lstclear(&first, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&first, temp);
-		lst = lst->next;
+		temp = ft_lstlast(*lst);
+		temp->next = new_node;
+		new_node->prev = temp;
 	}
-	return (first);
 }

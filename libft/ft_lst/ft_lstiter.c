@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 14:35:32 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/23 14:35:32 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/23 15:20:55 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/05 16:09:13 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <libft/ft_lst.h>
 
-t_list	*ft_lstlast(t_list *lst)
+/**
+ * @brief Iterates over the nodes of a linked lists while applying the `f`
+ * function to its content.
+ * @param lst The first node to iterate over
+ * @param f The function that will be applied to the node's content
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
+	while (lst != NULL)
+	{
+		f(lst->content);
 		lst = lst->next;
-	return (lst);
+	}
 }

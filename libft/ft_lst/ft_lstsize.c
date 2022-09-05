@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 15:02:44 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/23 15:02:44 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/05/23 14:33:30 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/05 16:13:16 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <libft/ft_lst.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+/**
+ * @brief Returns the size of a linked list.
+ * @param lst The starting node of the list
+ * @return The size of the list
+ */
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*temp;
+	int	size;
 
-	if (lst != NULL && *lst != NULL)
+	size = 0;
+	while (lst != NULL)
 	{
-		while (*lst != NULL)
-		{
-			temp = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = temp;
-		}
+		lst = lst->next;
+		size++;
 	}
+	return (size);
 }
