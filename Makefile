@@ -13,7 +13,7 @@ OBJDIR = ./build
 INCLUDES = $(addprefix -I,$(INCLUDESDIR))
 
 vpath %.c libft libft/ft_string libft/ft_io libft/ft_io/ft_printf \
-	libft/ft_mem
+	libft/ft_mem libft/ft_ctype
 SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
 	   ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \

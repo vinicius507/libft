@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 15:15:22 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/05/24 15:15:22 by vgoncalv         ###   ########.fr       */
+/*   Created: 2022/09/05 15:10:59 by vgoncalv          #+#    #+#             */
+/*   Updated: 2022/09/05 15:54:42 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_CTYPE_H
+# define FT_CTYPE_H
 
-int	ft_isalnum(int c)
-{
-	if ((ft_isalpha(c)) || (ft_isdigit(c)))
-		return (1);
-	return (0);
-}
+int	ft_isalpha(int c);
+
+int	ft_isdigit(int c);
+
+int	ft_isalnum(int c);
+
+int	ft_isascii(int c);
+
+int	ft_isprint(int c);
+
+int	ft_tolower(int c);
+
+int	ft_toupper(int c);
+
+#endif

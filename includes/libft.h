@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:18:08 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:22:48 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,6 @@ long long	ft_atoll(const char *nptr);
 
 /* Converts the initial portion of the string `nptr` to a `long double`. */
 long double	ft_atold(const char *nptr);
-
-/* Verifies if `c` is a alphabetic character of the ASCII table */
-int			ft_isalpha(int c);
-
-/* Verifies if `c` is a numeric character of the ASCII table */
-int			ft_isdigit(int c);
-
-/* Verifies if `c` is a numeric or alphabetic character of the ASCII table */
-int			ft_isalnum(int c);
-
-/* Verifies if `c` is an ASCII character. */
-int			ft_isascii(int c);
-
-/* Verifies if `c` is a printable ASCII character. */
-int			ft_isprint(int c);
-
-/* If `c` is a lowercase ASCII character, it returns it's uppercase equivalent.
- * */
-int			ft_toupper(int c);
-
-/* If `c` is a uppercase ASCII character, it returns it's lowercase equivalent.
- * */
-int			ft_tolower(int c);
 
 /* Allocates and returns a string representing the integer received as an
  * argument. */
