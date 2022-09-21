@@ -6,10 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:31:25 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:03:11 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:30:36 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft/ft_string.h>
 
 /**

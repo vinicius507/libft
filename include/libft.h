@@ -6,17 +6,14 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/05 15:57:50 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:24:22 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
-# include <stdarg.h>
 
 int			ft_atoi(const char *nptr);
 

@@ -6,10 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:23:29 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:51:10 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:29:06 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft/ft_string.h>
 
 static size_t	get_wordsnum(const char *s, char c)

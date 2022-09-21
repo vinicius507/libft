@@ -6,11 +6,12 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:42:23 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 14:36:23 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:00:56 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <unistd.h>
 #include <libft/ft_string.h>
 #include <libft/ft_io/ft_printf.h>
 

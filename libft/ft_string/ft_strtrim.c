@@ -6,10 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 15:01:19 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:03:46 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:28:55 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft/ft_string.h>
 
 static int	contains(const char *set, const char c)
