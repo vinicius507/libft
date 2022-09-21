@@ -6,9 +6,15 @@
 /*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:57:11 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/05 16:19:20 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:22:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_lst.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief Provides a linked list type `t_list` and functions for handling it.
+ */
 
 #ifndef FT_LST_H
 # define FT_LST_H

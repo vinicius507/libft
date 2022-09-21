@@ -6,9 +6,15 @@
 /*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 15:11:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:46:04 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:22:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_mem.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief Provides functions for memory manipulation.
+ */
 
 #ifndef FT_MEM_H
 # define FT_MEM_H

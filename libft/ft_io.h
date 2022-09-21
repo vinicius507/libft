@@ -6,9 +6,15 @@
 /*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 14:19:37 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 16:04:48 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:22:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_io.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief Provides functions for Input/Output operations.
+ */
 
 #ifndef FT_IO_H
 # define FT_IO_H

@@ -6,13 +6,19 @@
 /*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 13:55:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:51:20 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:22:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_string.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief Provides string related functions.
+ */
+
 #ifndef FT_STRING_H
 
-# include <stdlib.h>
+# include <stddef.h>
 
 size_t	ft_strlen(const char *str);
 

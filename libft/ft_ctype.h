@@ -6,9 +6,15 @@
 /*   By: vgoncalv <vgoncalv>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:10:59 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/05 15:54:42 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:22:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_ctype.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief Provides character testing functions.
+ */
 
 #ifndef FT_CTYPE_H
 # define FT_CTYPE_H

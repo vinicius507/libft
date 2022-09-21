@@ -6,9 +6,16 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/21 18:24:22 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:24:50 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file libft.h
+ * @author Vinícius Oliveira (vgoncalv)
+ * @brief This is my Libft. A general purpose library meant for usage within
+ * École 42.
+ */
 
 #ifndef LIBFT_H
 # define LIBFT_H
