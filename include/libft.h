@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/21 18:24:50 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:31:39 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+
+# include <libft/ft_io.h>
+# include <libft/ft_lst.h>
+# include <libft/ft_mem.h>
+# include <libft/ft_ctype.h>
+# include <libft/ft_string.h>
 
 int			ft_atoi(const char *nptr);
 
