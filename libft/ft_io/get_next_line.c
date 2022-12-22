@@ -35,7 +35,7 @@ int	read_chunk(int fd)
 	if (buf == NULL)
 		return (1);
 	bytes_read = read(fd, buf, BUFFER_SIZE);
-	if (bytes_read < 1)
+	if (bytes_read < 0)
 		return (GNLERROR);
 	if (bytes_read == 0)
 		return (GNLEOF);
