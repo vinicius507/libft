@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 16:56:03 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/21 18:30:24 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2022/12/21 20:34:37 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*get_line(int fd)
 	}
 	else
 	{
-		line = ft_substr(g_saves[fd], 0, linebreak - g_saves[fd]);
+		line = ft_substr(g_saves[fd], 0, linebreak - g_saves[fd] + 1);
 		ft_strlcpy(g_saves[fd], linebreak + 1, linebreak - g_saves[fd] + 1);
 	}
 	return (line);
