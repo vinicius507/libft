@@ -60,7 +60,7 @@ char	*get_line(int fd)
 	if (g_saves[fd] == NULL)
 		return (NULL);
 	linebreak = ft_strchr(g_saves[fd], '\n');
-	if (linebreak == NULL)
+	if (linebreak == NULL || linebreak[1] == '\0')
 	{
 		line = ft_strdup(g_saves[fd]);
 		free(g_saves[fd]);
