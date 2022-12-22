@@ -84,6 +84,8 @@ char	*get_next_line(int fd)
 	int		status;
 	char	*line;
 
+	if (fd < 0)
+		return (NULL);
 	while ((found_linebreak(fd) == 0))
 	{
 		status = read_chunk(fd);
