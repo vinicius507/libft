@@ -16,7 +16,7 @@
 #include <libft/ft_string.h>
 #include <libft/ft_io/get_next_line.h>
 
-static char	*g_saves[OPEN_MAX];
+static char	*g_saves[OPEN_MAX] = {};
 
 int	found_linebreak(int fd)
 {
