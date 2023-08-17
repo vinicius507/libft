@@ -1,7 +1,7 @@
 NAME = libft.a
 CC = cc
 AR = ar rcs
-RM = /bin/rm -f
+RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 BUFFER_SIZE = 8
