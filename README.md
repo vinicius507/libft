@@ -1,73 +1,59 @@
 # Libft
+**My very first library in C, made for 42 School.**
 
-My very first library in C. Made for École 42.
+This repository contains a collection of functions that replicate some of the standard C library functions as well as introduce additional utility functions. The library is primarily intended for use within the 42 School curriculum.
 
-Some of the functions are ~~somewhat~~ optimized, others are not. This library is meant to be used on École 42 only.
+## Table of Contents
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Functions](#functions)
+  - [String Functions](#string-functions)
+  - [File Writing Functions](#file-writing-functions)
+  - [Linked List Functions](#linked-list-functions)
+- [Additional Functions](#additional-functions)
+- [References](#references)
 
-Content
----
+## Introduction
+The **Libft** library provides a range of functions to perform various operations on strings, files, and linked lists. It serves as a foundational toolset for C programming, aiding in tasks such as memory manipulation, string processing, and data structure management. Some functions are optimized for performance, while others provide essential utilities.
 
-| Part | Functions |
-| :--- | ---: |
-| Libc functions(Mandatory) |ft_memset, ft_bzero, ft_memcpy, ft_memccpy, ft_memmove, ft_memchr, ft_memcmp, ft_strlen, ft_strlcpy, ft_strlcat, ft_strchr, ft_strrchr, ft_strnstr, ft_strncmp, ft_atoi, ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint, ft_toupper, ft_tolower, ft_calloc, ft_strdup |
-| Additional Functions(Mandatory) | ft_substr,  ft_strjoin,  ft_strtrim,  ft_split,  ft_itoa,  ft_strmapi,  ft_putchar_fd,  ft_putstr_fd,  ft_putendl_fd,  ft_putnbr_fd |
-| List Functions(Bonus) | ft_lstnew,  ft_lstadd_front,  ft_lstsize,  ft_lstlast,  ft_lstadd_back,  ft_lstdelone,  ft_lstclear,  ft_lstiter,  ft_lstmap |
+## Usage
+To use the **Libft** library, follow these steps:
 
-> Behavior of `libc` functions are defined in `man(3)`. The others are briefly mentioned below.
+1. Clone this repository to your local machine.
+2. Navigate to the repository's root directory.
+3. Run `make` to compile the library.
 
-Makefile
----
+A compiled library named `libft.a` will be generated. You can link this library with your C programs to access the provided functions.
 
-| Command | Usage |
-| :--- | ---: |
-| `make` | Equivalent to `make all` and `make libft.a`. Creates the library. |
-| `make clean` | Removes the object files. |
-| `make fclean` | Removes the object files and the library. |
-| `make re` | Invokes `fclean` rule and then `all`. |
-| `make so` | Creates a dynamic library(for tests purposes). |
-
-Behavior
----
-
+## Functions
 ### String Functions
-
-| Function | Behavior |
-| :--- | ---: |
-| ft_substr | Allocates and returns a substring from the string `s`. The substring begins at index `start` and is of maximum size `len`. |
-| ft_strjoin | Allocates and returns a new string, the concatenation of `s1` and `s2`. |
-| ft_strtrim | Allocates and returns a copy of `s` with the characters specified in `set` removed from the beggining and the end. |
-| ft_split | Allocates and returns an array of strings obtained by splitting `s` using the character `c` as a delimiter. The array is ended by a NULL pointer. |
-| ft_itoa | Allocates and returns a string representing the integer received as an argument. |
-| ft_strmapi | Applies the function `f` to each character of the string `s` to create a new string(with `malloc(3)`), resulting in successive applications of `f`. |
+- `ft_substr`: Allocates and returns a substring of a given string.
+- `ft_strjoin`: Concatenates two strings and returns the result.
+- `ft_strtrim`: Creates a new string by removing specified characters from the start and end.
+- `ft_split`: Splits a string into an array of substrings using a delimiter.
+- `ft_itoa`: Converts an integer into a string.
+- `ft_strmapi`: Applies a function to each character of a string to create a new string.
 
 ### File Writing Functions
-
-| Function | Behavior |
-| :--- | ---: |
-| ft_putchar_fd | Outputs the character `c` to the given file descriptor `fd`. |
-| ft_putstr_fd | Outputs the string `s` to the given file descriptor `fd`. |
-| ft_putendl_fd | Outputs the string `s` to the given file descriptor `fd`, followed by a new line. |
-| ft_putnbr_fd | Outputs the integer `n` to the given file descriptor `fd`. |
+- `ft_putchar_fd`: Writes a character to a file descriptor.
+- `ft_putstr_fd`: Writes a string to a file descriptor.
+- `ft_putendl_fd`: Writes a string followed by a newline to a file descriptor.
+- `ft_putnbr_fd`: Writes an integer to a file descriptor.
 
 ### Linked List Functions
-
-| Function | Behavior |
-| :--- | ---: |
-| ft_lstnew | Allocates and returns a new list element. The variable `content` is initialized with the value of the parameter and `next` is initialized to NULL. |
-| ft_lstadd_front | Adds the element `new` to the beggining of the list. |
-| ft_lstadd_back | Adds the element `new` to the end of the list. |
-| ft_lstsize | Counts the number of elements in a list. |
-| ft_lstlast | Returns the last element of a linked list. |
-| ft_lstdelone | Frees the memory of a list element, applying the function `del` to the content of the element. |
-| ft_lstclear | Same as ft_lstdelone but for all elements starting in `lst`. |
-| ft_lstiter | Iterates the list `lst` while applying the function `f` to each element. |
-| ft_lstmap | Iterates the list `lst` while applying the function `f` to each element. Creates a new list resulting of the successive applications of the function `f`. The `del` function is used to delete the content of an element if needed. |
+- `ft_lstnew`: Creates a new list element.
+- `ft_lstadd_front`: Adds an element to the beginning of a list.
+- `ft_lstadd_back`: Adds an element to the end of a list.
+- `ft_lstsize`: Counts the number of elements in a list.
+- `ft_lstlast`: Retrieves the last element of a list.
+- `ft_lstdelone`: Deletes a list element and applies a function to its content.
+- `ft_lstclear`: Deletes all elements in a list, applying a function to each content.
+- `ft_lstiter`: Iterates through a list and applies a function to each element.
+- `ft_lstmap`: Creates a new list by applying a function to each element of an existing list.
 
 ## Additional Functions
 
-| Function | Behavior |
-| :--- | ---: |
-| get_next_line<sup>[[1]](https://github.com/vinicius507/get_next_line)</sup> | Reads a line from the given file descriptor `fd`. |
+- `get_next_line`: Reads a line from a file descriptor<sup>[[1]](https://github.com/vinicius507/get_next_line)</sup>.
 
 ## References
 
