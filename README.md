@@ -3,16 +3,6 @@
 
 This repository contains a collection of functions that replicate some of the standard C library functions as well as introduce additional utility functions. The library is primarily intended for use within the 42 School curriculum.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Usage](#usage)
-- [Functions](#functions)
-  - [String Functions](#string-functions)
-  - [File Writing Functions](#file-writing-functions)
-  - [Linked List Functions](#linked-list-functions)
-- [Additional Functions](#additional-functions)
-- [References](#references)
-
 ## Introduction
 The **Libft** library provides a range of functions to perform various operations on strings, files, and linked lists. It serves as a foundational toolset for C programming, aiding in tasks such as memory manipulation, string processing, and data structure management. Some functions are optimized for performance, while others provide essential utilities.
 
