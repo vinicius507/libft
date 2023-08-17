@@ -21,7 +21,7 @@
  * @return The copied size of the string
  */
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{	
+{
 	size_t	offset;
 	size_t	src_size;
 	size_t	dest_size;
