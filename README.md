@@ -1,3 +1,14 @@
+<p align="center">
+    <img src="https://game.42sp.org.br/static/assets/achievements/libftm.png">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/OS-Linux-blue" alt="OS">
+    <img src="https://img.shields.io/badge/Language-C-orange.svg" alt="Language">
+    <img src="https://img.shields.io/badge/Grade-115%2F100-brightgreen.svg" alt="Grade">
+    <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
+</p>
+
 # Libft
 **My very first library in C, made for 42 School.**
 
