@@ -24,6 +24,18 @@
           };
         });
   in {
+    checks = forEachSystem ({pkgs}: {
+      norminette-check = pkgs.stdenvNoCC.mkDerivation {
+        name = "norminette-check";
+        src = ./libft;
+        dontBuild = true;
+        doCheck = true;
+        checkPhase = with pkgs; ''
+          ${norminette}/bin/norminette $src
+        '';
+        installPhase = "touch $out"; # Derivation must build an output.
+      };
+    });
     packages = forEachSystem ({pkgs}: {
       default = self.packages.${pkgs.system}.libft;
       libft = pkgs.stdenv.mkDerivation {

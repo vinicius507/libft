@@ -1,4 +1,4 @@
-name: norminette
+name: Norminette
 
 on:
   push:
@@ -12,13 +12,8 @@ jobs:
   norminette:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: pip
-      uses: BSFishy/pip-action@v1
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v22
       with:
-        packages: norminette
-        upgrade: true
-    - name: Norminette version
-      run: norminette --version
-    - name: Check norme errors
-      run: norminette ./libft ./include/libft.h
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix flake check
