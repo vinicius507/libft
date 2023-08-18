@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Returns the size of a linked list.
- * @param lst The starting node of the list
- * @return The size of the list
- */
 int	ft_lstsize(t_list *lst)
 {
 	int	size;

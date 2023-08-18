@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Frees the allocated memory of a nodes in a linked list.
- * @param lst The linked list
- * @param del The content deletion function
- */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst != NULL)

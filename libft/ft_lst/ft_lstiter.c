@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Iterates over the nodes of a linked lists while applying the `f`
- * function to its content.
- * @param lst The first node to iterate over
- * @param f The function that will be applied to the node's content
- */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)

@@ -10,22 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Adds a `t_list` node to the start of the list.
- * @param lst A pointer to the linked list
- * @param new_node The new node
- */
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
+void	ft_lstadd_front(t_list **lst, t_list *node)
 {
-	if (lst == NULL || new_node == NULL)
+	if (lst == NULL || node == NULL)
 		return ;
 	if (*lst != NULL)
 	{
-		new_node->next = *lst;
-		(*lst)->prev = new_node;
+		node->next = *lst;
+		(*lst)->prev = node;
 	}
-	*lst = new_node;
+	*lst = node;
 }

@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Returns the last node of a linked list.
- * @param lst The first node of the list
- */
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)

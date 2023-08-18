@@ -11,14 +11,8 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_lst.h>
 #include <stddef.h>
 
-/**
- * @brief Creates a new `t_list` node.
- * @param content A pointer to the content of the node
- * @return The allocated  `t_list` node
- */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*item;

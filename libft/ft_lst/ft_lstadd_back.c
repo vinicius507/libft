@@ -10,26 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_lst.h>
 
-/**
- * @brief Adds a `t_list` node to the end of the list.
- * @param lst A pointer to the linked list
- * @param new_node The new node
- */
-void	ft_lstadd_back(t_list **lst, t_list *new_node)
+void	ft_lstadd_back(t_list **lst, t_list *node)
 {
 	t_list	*temp;
 
-	if (lst == NULL || new_node == NULL)
+	if (lst == NULL || node == NULL)
 		return ;
 	if (*lst == NULL)
-		*lst = new_node;
+		*lst = node;
 	else
 	{
 		temp = ft_lstlast(*lst);
-		temp->next = new_node;
-		new_node->prev = temp;
+		temp->next = node;
+		node->prev = temp;
 	}
 }

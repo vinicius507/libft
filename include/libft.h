@@ -23,8 +23,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-# include <libft/ft_lst.h>
-
 /**
  * @brief Converts the initial portion of the string `nptr` to an integer.
  * @param nptr The string to be converted.
@@ -652,5 +650,83 @@ int			ft_vasprintf(char **buf, const char *format, va_list ap);
  * or a negative value on error.
  */
 int			ft_asprintf(char **buf, const char *format, ...);
+
+/**
+ * @brief Structure representing a linked list element.
+ */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*prev;
+	struct s_list	*next;
+}	t_list;
+
+/**
+ * @brief Create a new list element.
+ * @param content The content to be stored in the list element.
+ * @return A pointer to the newly created list element.
+ */
+t_list		*ft_lstnew(void *content);
+
+/**
+ * @brief Add a new list element to the front of the list.
+ * @param lst A pointer to the pointer to the first list element.
+ * @param node The new list element to add.
+ */
+void		ft_lstadd_front(t_list **lst, t_list *node);
+
+/**
+ * @brief Get the size of a linked list.
+ * @param lst A pointer to the first list element.
+ * @return The number of list elements in the linked list.
+ */
+int			ft_lstsize(t_list *lst);
+
+/**
+ * @brief Get the last element of a linked list.
+ * @param lst A pointer to the first list element.
+ * @return A pointer to the last list element.
+ */
+t_list		*ft_lstlast(t_list *lst);
+
+/**
+ * @brief Add a new list element to the back of the list.
+ * @param lst A pointer to the pointer to the first list element.
+ * @param node The new list element to add.
+ */
+void		ft_lstadd_back(t_list **lst, t_list *node);
+
+/**
+ * @brief Delete a single list element.
+ * @param lst A pointer to the list element to be deleted.
+ * @param del A function to delete the content of the list element.
+ */
+void		ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief Delete all elements in a linked list.
+ * @param lst A pointer to the pointer to the first list element.
+ * @param del A function to delete the content of each list element.
+ */
+void		ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**
+ * @brief Iterate over each element in a linked list and apply a function.
+ * @param lst A pointer to the first list element.
+ * @param f The function to be applied to each list element's content.
+ */
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Create a new linked list by applying a function to each element's
+ * content.
+ * @param lst A pointer to the first list element.
+ * @param f The function to be applied to each list element's content.
+ * @param del A function to delete the content of each list element in case
+ * of failure.
+ * @return A pointer to the first element of the newly created list, or NULL on
+ * failure.
+ */
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
