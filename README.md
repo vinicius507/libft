@@ -26,36 +26,7 @@ To use the **Libft** library, follow these steps:
 
 A compiled library named `libft.a` will be generated. You can link this library with your C programs to access the provided functions.
 
-## Functions
-### String Functions
-- `ft_substr`: Allocates and returns a substring of a given string.
-- `ft_strjoin`: Concatenates two strings and returns the result.
-- `ft_strtrim`: Creates a new string by removing specified characters from the start and end.
-- `ft_split`: Splits a string into an array of substrings using a delimiter.
-- `ft_itoa`: Converts an integer into a string.
-- `ft_strmapi`: Applies a function to each character of a string to create a new string.
-
-### File Writing Functions
-- `ft_putchar_fd`: Writes a character to a file descriptor.
-- `ft_putstr_fd`: Writes a string to a file descriptor.
-- `ft_putendl_fd`: Writes a string followed by a newline to a file descriptor.
-- `ft_putnbr_fd`: Writes an integer to a file descriptor.
-
-### Linked List Functions
-- `ft_lstnew`: Creates a new list element.
-- `ft_lstadd_front`: Adds an element to the beginning of a list.
-- `ft_lstadd_back`: Adds an element to the end of a list.
-- `ft_lstsize`: Counts the number of elements in a list.
-- `ft_lstlast`: Retrieves the last element of a list.
-- `ft_lstdelone`: Deletes a list element and applies a function to its content.
-- `ft_lstclear`: Deletes all elements in a list, applying a function to each content.
-- `ft_lstiter`: Iterates through a list and applies a function to each element.
-- `ft_lstmap`: Creates a new list by applying a function to each element of an existing list.
-
-## Additional Functions
-
-- `get_next_line`: Reads a line from a file descriptor<sup>[[1]](https://github.com/vinicius507/get_next_line)</sup>.
-
-## References
+## Related Projects
 
 1. [Get Next Line](https://github.com/vinicius507/get_next_line).
+2. [42 Printf](https://github.com/vinicius507/ft_printf).
