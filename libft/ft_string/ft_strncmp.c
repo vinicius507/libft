@@ -10,15 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Compares two strings up to `n` bytes.
- * @param s1
- * @param s2
- * @param n: The maximum number of bytest to be compared
- * @return A non-zero value if the strings differ up to `n`
- */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			offset;

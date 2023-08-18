@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
-/**
- * @brief Copies a string to a new allocated string.
- * @param s The string to be copied
- * @return The new allocated copy of the string
- */
 char	*ft_strdup(const char *s)
 {
 	char	*s_cpy;

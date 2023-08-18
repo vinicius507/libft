@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
 static int	contains(const char *set, const char c)
 {
@@ -34,12 +34,6 @@ static size_t	get_limit(const char *str, const char *set)
 	return (len + 1);
 }
 
-/**
- * @brief Trims a string of characters from `set`.
- * @param str The string to be trimmed
- * @param set The set of characters to be trimmed of the string
- * @return The allocated trimmed string
- */
 char	*ft_strtrim(const char *str, const char *set)
 {
 	char	*res;

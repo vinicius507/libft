@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Finds the first occurrence of `c` in the string `s`.
- * @param s
- * @param c
- * @return A pointer to the character, if found, else NULL
- */
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned char	*s_u;

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_string.h>
 #include <libft/ft_io/ft_printf.h>
 
 char	*format_ptr(t_arg *arg, va_list ap)

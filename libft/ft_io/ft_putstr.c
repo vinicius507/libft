@@ -12,7 +12,6 @@
 
 #include <libft.h>
 #include <unistd.h>
-#include <libft/ft_string.h>
 
 /**
  * @brief Writes a string on STDOUT.

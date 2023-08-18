@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Compares two strings.
- * @param s1
- * @param s2
- * @return A non-zero value if the strings differ
- */
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t			offset;

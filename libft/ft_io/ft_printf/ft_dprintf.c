@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <libft/ft_string.h>
+#include <libft.h>
 #include <libft/ft_io/ft_printf.h>
+#include <unistd.h>
 
 /**
  * @brief Writes formatted string on a file descriptor.

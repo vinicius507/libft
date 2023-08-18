@@ -10,16 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
-/**
- * @brief Retrieves a substring of the string `s`.
- * @param s
- * @param start The starting index of the substring
- * @param len The length of the substring
- * @return The allocated substring
- */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;

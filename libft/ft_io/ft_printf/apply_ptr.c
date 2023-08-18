@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_string.h>
 #include <libft/ft_io/ft_printf.h>
 
 int	apply_precision_ptr(char **str, t_arg *arg)

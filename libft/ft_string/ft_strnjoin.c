@@ -10,16 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
-/**
- * @brief Joins two strings up to `n` bytes.
- * @param s1
- * @param s2
- * @param size_t n
- * @return The allocated joined string
- */
 char	*ft_strnjoin(const char *s1, const char *s2, size_t n)
 {
 	size_t	len;

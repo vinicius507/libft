@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Calculates the length of a null-terminated string.
- * @param str
- * @return The length of the string
- */
 size_t	ft_strlen(const char *str)
 {
 	size_t	len;

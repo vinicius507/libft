@@ -10,15 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Copies a string. It copies up to `size - 1` bytes.
- * @param dest The destination string
- * @param src The string to be copied
- * @param size: The size to be copied
- * @return The size of the copied string
- */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	offset;

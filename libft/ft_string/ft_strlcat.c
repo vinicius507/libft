@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Appends a string into another one. It appends up to `size -
- * strlen(dest) - 1` bytes.
- * @param dest The destination string, needs to be allocated
- * @param src The string to be copied
- * @param size The size to be copied
- * @return The copied size of the string
- */
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	offset;

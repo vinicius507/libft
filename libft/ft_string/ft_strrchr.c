@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Finds the last occurrence of the char `c` in the string `s`.
- * @param s
- * @param c
- * @return A pointer to the character in the string, if found, else, NULL
- */
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t			len;

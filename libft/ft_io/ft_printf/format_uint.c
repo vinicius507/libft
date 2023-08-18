@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_string.h>
 #include <libft/ft_io/ft_printf.h>
 
 static unsigned long long int	get_nbr(t_arg *arg, unsigned long long int n)

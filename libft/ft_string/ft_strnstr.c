@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 
-/**
- * @brief Finds the first occurrence of the string `little` in the string `big`
- * up to `len`.
- * @param big
- * @param little
- * @param len
- * @return The address to the start of the substring
- */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	b_size;

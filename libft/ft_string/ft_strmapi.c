@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
-/**
- * @brief Maps a funtion to a string and returns the resulting string.
- * @param s: The string to be mapped
- * @param f The map function to build the new string
- * @return The allocated new string
- */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*res;

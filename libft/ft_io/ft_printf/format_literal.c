@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_string.h>
+#include <libft.h>
 #include <libft/ft_io/ft_printf.h>
 
 char	*format_literal(t_arg *arg)

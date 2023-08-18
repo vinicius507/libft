@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
-/**
- * @brief Joins two strings.
- * @param s1
- * @param s2
- * @return The joined strings
- */
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	len;

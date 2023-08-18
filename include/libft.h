@@ -24,7 +24,6 @@
 
 # include <libft/ft_io.h>
 # include <libft/ft_lst.h>
-# include <libft/ft_string.h>
 
 /**
  * @brief Converts the initial portion of the string `nptr` to an integer.
@@ -335,5 +334,192 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
  */
 void		*ft_memjoin(const void *m1, const void *m2,
 				size_t size1, size_t size2);
+
+/**
+ * @brief Calculates the length of a null-terminated character string.
+ * @param str A pointer to the start of the character string.
+ * @return The length of the string.
+ */
+size_t		ft_strlen(const char *str);
+
+/**
+ * @brief Copies a character string to the heap.
+ * @param s The string to be copied.
+ * @return A pointer to the duplicate string.
+ */
+char		*ft_strdup(const char *s);
+
+/**
+ * @brief Concatenates two null-terminated character strings.
+ * @param s1 The starting character string.
+ * @param s2 The ending character string.
+ * @return A pointer to the resulting string if successful, otherwise, NULL.
+ */
+char		*ft_strjoin(const char *s1, const char *s2);
+
+/**
+ * @brief Concatenates two null-terminated character strings up to `n`
+ * characters.
+ * @param s1 The starting character string.
+ * @param s2 The ending character string.
+ * @return A pointer to the resulting string if successful, otherwise, NULL.
+ * @return The allocated joined string
+ */
+char		*ft_strnjoin(const char *s1, const char *s2, size_t n);
+
+/**
+ * @brief Copy a string while ensuring null-termination and size restriction.
+ *
+ * The `ft_strlcpy` function copies up to `size - 1` characters from the source
+ * string to the destination buffer, ensuring null-termination. If the length
+ * of the source string is less than `size`, the entire source string is copied.
+ * If the length is greater than or equal to `size`, `size - 1` characters are
+ * copied, and the destination buffer is null-terminated.
+ *
+ * @param dest The destination buffer where the copied string will be stored.
+ * @param src The source string to be copied.
+ * @param size The size of the destination buffer.
+ * @return The total length of the source string.
+ *
+ * @note This function does not ensure null-termination if `size` is zero.
+ */
+size_t		ft_strlcpy(char *dest, const char *src, size_t size);
+
+/**
+ * @brief Concatenate strings while ensuring null-termination and size
+ * restriction.
+ *
+ * The `strlcat` function appends up to `size - strlen(dest) - 1` characters
+ * from the source string to the destination buffer, ensuring null-termination.
+ * It then adds a null-terminator at the end of the concatenated string. The
+ * resulting concatenated string will not exceed the size of the destination
+ * buffer.
+ *
+ * @param dest The destination buffer where the concatenated string will be
+ * stored.
+ * @param src The source string to be appended.
+ * @param size The size of the destination buffer.
+ * @return The total length of the concatenated string.
+ *
+ * @note This function does not ensure null-termination if `size` is zero.
+ */
+size_t		ft_strlcat(char *dest, const char *src, size_t size);
+
+/**
+ * @brief Apply a function to each character of a string, creating a new string.
+ * @param s The input string.
+ * @param f The function to apply to each character.
+ * @return A new dynamically allocated string if successful, otherwise, NULL.
+
+ * Example Usage:
+ * @code
+ * const char *input = "Hello, world!";
+ * char *result = ft_striter(input, ft_toupper); // Results in "HELLO, WORLD!".
+ * @endcode
+ */
+char		*ft_striter(const char *s, int (*f)(int));
+
+/**
+ * @brief Apply a function to each character of a string with its index,
+ * creating a new string.
+ * @param s The input string.
+ * @param f The function to apply to each character, taking the character's
+ * index as well.
+ * @return A new dynamically allocated string, or NULL on memory allocation
+ * failure.
+ *
+ * @note The returned string must be freed using `free` when it's no longer
+ * needed.
+ *
+ * Example Usage:
+ * @code
+ * // Append the character's index to each character
+ * char appendIndex(unsigned int index, char c) {
+ *     char result[2];
+ *     result[0] = c;
+ *     result[1] = '0' + index;
+ *     return result;
+ * }
+ *
+ * const char *input = "Hello";
+ * char *result = ft_strmapi(input, appendIndex); // Results in "H0e1l2l3o4".
+ * @endcode
+ */
+char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+
+/**
+ * @brief Compare two strings.
+ * @param s1 The first string for comparison.
+ * @param s2 The second string for comparison.
+ * @return An integer value indicating the comparison result:
+ *         - 0 if the strings are equal.
+ *         - A negative value if `s1` is lexicographically less than `s2`.
+ *         - A positive value if `s1` is lexicographically greater than `s2`.
+ */
+int			ft_strcmp(const char *s1, const char *s2);
+
+/**
+ * @brief Compare a portion of two strings.
+ * @param s1 The first string for comparison.
+ * @param s2 The second string for comparison.
+ * @param n The maximum number of characters to compare.
+ * @return An integer value indicating the comparison result:
+ *         - 0 if the strings are equal.
+ *         - A negative value if `s1` is lexicographically less than `s2`.
+ *         - A positive value if `s1` is lexicographically greater than `s2`.
+ */
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/**
+ * @brief Find the first occurrence of a character in a string.
+ * @param s The input string to search.
+ * @param c The character to search for.
+ * @return A pointer to the first occurrence of `c` in `s`, or NULL if not found.
+ */
+char		*ft_strchr(const char *s, int c);
+
+/**
+ * @brief Find the last occurrence of a character in a string.
+ * @param s The input string to search.
+ * @param c The character to search for.
+ * @return A pointer to the last occurrence of `c` in `s`, or NULL if not found.
+ */
+char		*ft_strrchr(const char *s, int c);
+
+/**
+ * @brief Find the first occurrence of a substring within a limited portion of
+ * a string.
+ * @param big The input string to search within.
+ * @param little The substring to search for.
+ * @param len The maximum number of characters to search within.
+ * @return A pointer to the start of the substring in `big`, or NULL if not
+ * found.
+ */
+char		*ft_strnstr(const char *big, const char *little, size_t len);
+
+/**
+ * @brief Trim specified characters from the beginning and end of a string.
+ * @param str The input string to be trimmed.
+ * @param set The set of characters to be trimmed from `str`.
+ * @return The allocated trimmed string.
+ */
+char		*ft_strtrim(const char *str, const char *set);
+
+/**
+ * @brief Extract a substring from a string.
+ * @param s The input string to extract the substring from.
+ * @param start The starting index of the substring.
+ * @param len The length of the substring.
+ * @return The allocated substring.
+ */
+char		*ft_substr(const char *s, unsigned int start, size_t len);
+
+/**
+ * @brief Split a string into an array of substrings using a delimiter.
+ * @param s The input string to be split.
+ * @param c The delimiter character.
+ * @return A null-terminated array of split substrings.
+ */
+char		**ft_split(const char *s, char c);
 
 #endif

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
-#include <libft/ft_string.h>
 
 static size_t	get_wordsnum(const char *s, char c)
 {
@@ -73,12 +73,6 @@ static void	*kill(char **res, size_t stop)
 	return (NULL);
 }
 
-/**
- * @brief Splits a string using by the delimiter `c`.
- * @param s
- * @param c
- * @return A null-terminated array of the split strings
- */
 char	**ft_split(const char *s, char c)
 {
 	char	**res;
