@@ -13,11 +13,6 @@
 #include <libft.h>
 #include <libft/ft_mem.h>
 
-/**
- * @brief Converts an `unsigned int` value `n` to a string.
- * @param n
- * @return The string form of the `unsigned int` value `n`
- */
 char	*ft_uitoa(unsigned int n)
 {
 	unsigned int		temp;

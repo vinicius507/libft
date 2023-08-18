@@ -34,11 +34,6 @@ static void	get_nbr_str(char *str, int n, size_t size)
 	}
 }
 
-/**
- * @brief Converts an integer value `n` to a string.
- * @param n
- * @return The string form of the integer `n`
- */
 char	*ft_itoa(int n)
 {
 	int		temp;

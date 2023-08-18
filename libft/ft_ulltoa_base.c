@@ -31,15 +31,6 @@ static int	get_int_base(char *base)
 	return (int_base);
 }
 
-/**
- * @brief Converts an `unsigned long long int` value `n` to a
- * string using the string base `base`.
- * @param n
- * @param base A string with the characters representing the base. The numeric
- * base is the the number of characters in it.
- * @return The string form of the `unsigned long long int`
- * value `n` in its `base` form
- */
 char	*ft_ulltoa_base(unsigned long long int n, char *base)
 {
 	char						*res;

@@ -21,12 +21,6 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-/**
- * @brief Converts the initial portion of the string `nptr` to a `long int`.
- * @param nptr
- * @return The `long int` representation of the inital portion of the string
- * `nptr`
- */
 long long int	ft_atoll(const char *nptr)
 {
 	long long int	num;

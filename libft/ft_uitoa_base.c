@@ -31,16 +31,6 @@ static int	get_int_base(char *base)
 	return (int_base);
 }
 
-/**
- * @brief Converts an `unsigned int` value `n` to a string
- * using the string base `base`.
- * @param n
- * @param base A string with the characters representing the
- * base. The numeric base is the the number of characters in
- * it.
- * @return The string form of the `unsigned int` value `n` in
- * its `base` form
- */
 char	*ft_uitoa_base(unsigned int n, char *base)
 {
 	char				*res;

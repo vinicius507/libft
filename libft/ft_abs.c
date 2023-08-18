@@ -12,12 +12,6 @@
 
 #include <libft.h>
 
-/**
- * @brief Returns the absolute value of an integer `n`.
- * @param n
- * @return The `unsigned int` value representing the absolute
- * value of the integer `n`.
- */
 uint	ft_abs(int n)
 {
 	unsigned int	u_n;

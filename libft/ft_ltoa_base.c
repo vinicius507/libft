@@ -56,15 +56,6 @@ static char	*get_nbr_str(long int n, int int_base, char *base, size_t size)
 	return (str);
 }
 
-/**
- * @brief Converts a `long int` value `n` to a string using
- * the string base `base`.
- * @param n
- * @param base A string with the characters representing the base. The numeric
- * base is the the number of characters in it.
- * @return The string form of the `long int` value `n` in its
- * `base` form
- */
 char	*ft_ltoa_base(long int n, char *base)
 {
 	char			*res;

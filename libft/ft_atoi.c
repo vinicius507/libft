@@ -21,11 +21,6 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-/**
- * @brief Converts the initial portion of the string `nptr` to an `int`.
- * @param nptr
- * @return The `int` representation of the inital portion of the string `nptr`
- */
 int	ft_atoi(const char *nptr)
 {
 	int	num;

@@ -34,11 +34,6 @@ static void	get_nbr_str(char *str, long int n, size_t size)
 	}
 }
 
-/**
- * @brief Converts a `long int` value `n` to a string.
- * @param n
- * @return The string form of the `long int` value `n`
- */
 char	*ft_ltoa(long int n)
 {
 	long int		temp;

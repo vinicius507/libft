@@ -40,12 +40,6 @@ static long double	get_decimal(const char *nptr, int sign)
 	return (num);
 }
 
-/**
- * @brief Converts the initial portion of the string `nptr` to a `long double`.
- * @param nptr
- * @return The `long double` representation of the inital portion of the string
- * `nptr`
- */
 long double	ft_atold(const char *nptr)
 {
 	long double	num;

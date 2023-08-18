@@ -13,13 +13,6 @@
 #include <libft.h>
 #include <libft/ft_mem.h>
 
-/**
- * @brief Converts an `unsigned long long int` value `n` to a
- * string.
- * @param n
- * @return The string form of the `unsigned long long int`
- * value `n`
- */
 char	*ft_ulltoa(unsigned long long int n)
 {
 	unsigned long long int		temp;
