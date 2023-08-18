@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror
 BUFFER_SIZE = 8
 
 SRCDIR = ./libft
-INCLUDESDIR = . ./include
+INCLUDESDIR = ./include
 OBJDIR = ./build
 
 INCLUDES = $(addprefix -I,$(INCLUDESDIR))
