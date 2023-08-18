@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
 static void	memrcpy(unsigned char *dest, const unsigned char *src, size_t n)
 {
@@ -18,14 +18,6 @@ static void	memrcpy(unsigned char *dest, const unsigned char *src, size_t n)
 		dest[n] = src[n];
 }
 
-/**
- * @brief Copies `n` bytes from `src` to `dest`. The memory areas may
- * overlap.
- * @param dest
- * @param src
- * @param n
- * @return A pointer to dest
- */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	if (dest == src)

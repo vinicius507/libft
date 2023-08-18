@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_mem.h>
 #include <libft/ft_string.h>
 
 static int	get_int_base(char *base)

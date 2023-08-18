@@ -24,7 +24,6 @@
 
 # include <libft/ft_io.h>
 # include <libft/ft_lst.h>
-# include <libft/ft_mem.h>
 # include <libft/ft_string.h>
 
 /**
@@ -247,5 +246,94 @@ int			ft_tolower(int c);
  * it is returned unchanged.
  */
 int			ft_toupper(int c);
+
+/**
+ * @brief Allocates memory for an array of `nmemb` elements of `size` bytes each
+ * and returns a pointer to the allocated memory.
+ * @param nmemb The number of elements to allocate memory to.
+ * @param size The number of bytes to allocate for each member.
+ * @return A pointer to the allocated memory, if successful, otherwise NULL.
+ */
+void		*ft_calloc(size_t nmemb, size_t size);
+
+/**
+ * @brief Sets `n` bytes of memory region `s` to the character `c`.
+ * @param s A pointer to the start of the memory region.
+ * @param c The value to be set for all bytes of the memory region.
+ * @param n The number of bytes to be modified.
+ * @return A pointer to the start of the memory region.
+ */
+void		*ft_memset(void *s, int c, size_t n);
+
+/**
+ * @brief Sets `n` bytes of memory region `s` to 0.
+ * @param s A pointer to the start of the memory region.
+ * @param n The number of bytes to be zeroed.
+ * @return A pointer to the start of the memory region.
+ */
+void		ft_bzero(void *s, size_t n);
+
+/**
+ * @brief Copies `n` bytes of from memory area `src` to memory area `dest`.
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param n The number of bytes to be copied.
+ * @return A pointer to the copied area.
+ */
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Copies up to `n` bytes of from memory area `src` to memory area
+ * `dest`, stopping when the character `c` is found.
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param c The stopping character.
+ * @param n The maximum number of bytes to be copied.
+ * @return A pointer to the copied area.
+ */
+void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
+
+/**
+ * @brief Copies `n` bytes from `src` to `dest`. The memory areas may
+ * overlap.
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param n The number of bytes to be copied.
+ * @return A pointer to dest
+ */
+void		*ft_memmove(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Scans a memory area for a byte `c`.
+ * @param s A pointer to the memory area. .
+ * @param c The target byte. Is is interpreted as an `unsigned char `.
+ * @param n The size of the memory area to be scanned.
+ * @return A pointer to the byte, if found, else, `NULL`.
+ *
+ * @note The sequence of bytes that compose `s` are interpreted as
+ * unsigned characters.
+ */
+void		*ft_memchr(const void *s, int c, size_t n);
+
+/**
+ * @brief Compares the first `n` bytes of two memory areas.
+ * @param s1 The first memory area.
+ * @param s2 The second memory area.
+ * @param n The number of bytes to be compared
+ * @return For a non-zero value, it is the difference between the first pair
+ * of bytes that differ in `s1` and `s2`
+ */
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/**
+ * @brief Joins two memory sections.
+ * @param m1 A pointer to the first memory section.
+ * @param m2 A pointer to the second memory section.
+ * @param size1 The size of the first memory section.
+ * @param size2 The size of the second memory section.
+ * @return A pointer to the resulting memory section.
+ */
+void		*ft_memjoin(const void *m1, const void *m2,
+				size_t size1, size_t size2);
 
 #endif

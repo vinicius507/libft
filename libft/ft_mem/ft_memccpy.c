@@ -10,17 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Copies up to `n` bytes of from memory area `src` to memory area
- * `dest`, stopping when the character `c` is found.
- * @param dest The destination memory area
- * @param src The source memory area
- * @param c The stopping character
- * @param n The maximum number of bytes to be copied
- * @return A pointer to the copied area
- */
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	void	*ptr;

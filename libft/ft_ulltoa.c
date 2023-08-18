@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_mem.h>
 
 char	*ft_ulltoa(unsigned long long int n)
 {

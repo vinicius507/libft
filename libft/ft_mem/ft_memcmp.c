@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Compares the first `n` bytest of two memory areas.
- * @param s1
- * @param s2
- * @param n The number of bytes to be compared
- * @return For a non-zero value, it is the difference between the first pair
- * of bytes that differ in `s1` and `s2`
- */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;

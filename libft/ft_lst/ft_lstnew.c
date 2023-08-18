@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft/ft_mem.h>
 #include <libft/ft_lst.h>
 
 /**

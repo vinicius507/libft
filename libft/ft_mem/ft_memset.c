@@ -10,15 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Sets `n` bytes of memory area `s` to the character `c`.
- * @param s
- * @param c
- * @param n
- * @return A pointer to the start of the set memory area
- */
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;

@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Scans a memory area for a byte `c`.
- * @param s A pointer to the memory area. It is interpreted as an `unsigned
- * char *`
- * @param c The target byte. Is is interpreted as an `unsigned char `.
- * @param n The size of the memory area to be scanned
- * @return A pointer to the byte, if found, else, `NULL`.
- */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr;

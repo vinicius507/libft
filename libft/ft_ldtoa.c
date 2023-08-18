@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_mem.h>
 
 static void	get_nbr_str(char *str, long double n,
 	size_t precision, size_t size_int)

@@ -10,16 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <libft/ft_mem.h>
 
-/**
- * @brief Allocates memory and sets it to zero.
- * @param nmemb The number of elements to allocate to
- * @param size The number of bytes to allocate for each member
- * @return A pointer to the allocated memory
- */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;

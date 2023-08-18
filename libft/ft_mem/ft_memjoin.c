@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Joins two memory sections.
- * @param m1 A pointer to the first memory section
- * @param m2 A pointer to the second memory section
- * @param size1 The size of the first memory section
- * @param size2 The size of the second memory section
- * @return A pointer to the joined memory
- */
 void	*ft_memjoin(const void *m1, const void *m2, size_t size1, size_t size2)
 {
 	void	*m;

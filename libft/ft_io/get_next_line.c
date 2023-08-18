@@ -12,7 +12,6 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <libft/ft_mem.h>
 #include <libft/ft_string.h>
 #include <libft/ft_io/get_next_line.h>
 

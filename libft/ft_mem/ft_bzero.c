@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_mem.h>
+#include <libft.h>
 
-/**
- * @brief Sets `n` bytes of memory area `s` to 0.
- * @param s
- * @param n
- * @return A pointer to the start of the zeroed memory area
- */
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
