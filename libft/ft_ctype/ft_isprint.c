@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_ctype.h>
+#include <libft.h>
 
-/**
- * @brief Checks if a character `c` is a printable character.
- * @param c
- * @return A non-zero value if it is a printable character
- */
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)

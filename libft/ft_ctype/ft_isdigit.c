@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_ctype.h>
+#include <libft.h>
 
-/**
- * @brief Checks if a character `c` is a digit.
- * @param c
- * @return A non-zero value if it is a digit
- */
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

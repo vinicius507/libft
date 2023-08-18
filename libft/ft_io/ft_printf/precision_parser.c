@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_ctype.h>
 #include <libft/ft_io/ft_printf.h>
 
 int	precision_parser(char **f, va_list ap)

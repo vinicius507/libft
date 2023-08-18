@@ -25,7 +25,6 @@
 # include <libft/ft_io.h>
 # include <libft/ft_lst.h>
 # include <libft/ft_mem.h>
-# include <libft/ft_ctype.h>
 # include <libft/ft_string.h>
 
 /**
@@ -196,5 +195,56 @@ char		*ft_ulltoa_base(unsigned long long int n, char *base);
  * @return The absolute value from the integer `n`.
  */
 uint		ft_abs(int n);
+
+/**
+ * @brief Checks if the given character is an alphabetic character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is an alphabetic character.
+ */
+int	ft_isalpha(int c);
+
+/**
+ * @brief Checks if the given character is a digit character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is a digit character.
+ */
+int	ft_isdigit(int c);
+
+/**
+ * @brief Checks if the given character is an alphanumeric character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is an alphanumeric character.
+ */
+int	ft_isalnum(int c);
+
+/**
+ * @brief Checks if the given character is an ASCII character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is an ASCII character.
+ */
+int	ft_isascii(int c);
+
+/**
+ * @brief Checks if the given character is a printable character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is a printable character.
+ */
+int	ft_isprint(int c);
+
+/**
+ * @brief Converts the given character to its lowercase form.
+ * @param c The character to be converted.
+ * @return The given character lowercase version, if it exists, otherwise
+ * it is returned unchanged.
+ */
+int	ft_tolower(int c);
+
+/**
+ * @brief Converts the given character to its uppercase form.
+ * @param c The character to be converted.
+ * @return The given character uppercase version, if it exists, otherwise
+ * it is returned unchanged.
+ */
+int	ft_toupper(int c);
 
 #endif

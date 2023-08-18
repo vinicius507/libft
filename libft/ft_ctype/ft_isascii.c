@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_ctype.h>
+#include <libft.h>
 
-/**
- * @brief Checks if a character `c` is an ASCII character.
- * @param c
- * @return A non-zero value if it is an ASCII character
- */
 int	ft_isascii(int c)
 {
 	return ((c & ~0x7f) == 0);

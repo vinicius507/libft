@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_ctype.h>
+#include <libft.h>
 
-/**
- * @brief Returns the alphabetic character `c` in its
- * lowercase form.
- * @param c
- * @return The lowercase form of the character `c`
- */
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')

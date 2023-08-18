@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_ctype.h>
 
 static int	ft_isspace(int c)
 {

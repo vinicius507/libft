@@ -10,15 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/ft_ctype.h>
+#include <libft.h>
 
-/**
- * @brief Checks if a character `c` is an alphabetic
- * character or a digit.
- * @param c
- * @return A non-zero value if it is either an alphabetic
- * characetr or a digit
- */
 int	ft_isalnum(int c)
 {
 	if ((ft_isalpha(c)) || (ft_isdigit(c)))
