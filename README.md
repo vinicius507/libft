@@ -21,6 +21,10 @@ This repository contains a collection of functions that replicate some of the st
 The **Libft** library provides a range of functions to perform various operations on strings, files, and linked lists. It serves as a foundational toolset for C programming, aiding in tasks such as memory manipulation, string processing, and data structure management. Some functions are optimized for performance, while others provide essential utilities.
 
 ## Usage
+> **Warning**
+>
+> During the 42 curriculum you are required to develop and use your **Libft** library.
+
 To use the **Libft** library, follow these steps:
 
 1. Clone this repository to your local machine.
