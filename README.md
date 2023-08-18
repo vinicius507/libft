@@ -9,12 +9,10 @@
     <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
 </p>
 
-<p align="center">
-    [![build](https://github.com/vinicius507/libft/actions/workflows/build.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/build.yml)
-    [![norminette](https://github.com/vinicius507/libft/actions/workflows/norminette.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/norminette.yml)
-</p>
-
 # Libft
+[![build](https://github.com/vinicius507/libft/actions/workflows/build.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/build.yml)
+[![norminette](https://github.com/vinicius507/libft/actions/workflows/norminette.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/norminette.yml)
+
 **My very first library in C, made for 42 School.**
 
 This repository contains a collection of functions that replicate some of the standard C library functions as well as introduce additional utility functions. The library is primarily intended for use within the 42 School curriculum.
