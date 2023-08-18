@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <libft.h>
 #include <libft/ft_lst.h>
+#include <stddef.h>
 
 /**
  * @brief Creates a new `t_list` node.
