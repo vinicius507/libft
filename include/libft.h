@@ -201,35 +201,35 @@ uint		ft_abs(int n);
  * @param c The character to be checked.
  * @return A non-zero value if it is an alphabetic character.
  */
-int	ft_isalpha(int c);
+int			ft_isalpha(int c);
 
 /**
  * @brief Checks if the given character is a digit character.
  * @param c The character to be checked.
  * @return A non-zero value if it is a digit character.
  */
-int	ft_isdigit(int c);
+int			ft_isdigit(int c);
 
 /**
  * @brief Checks if the given character is an alphanumeric character.
  * @param c The character to be checked.
  * @return A non-zero value if it is an alphanumeric character.
  */
-int	ft_isalnum(int c);
+int			ft_isalnum(int c);
 
 /**
  * @brief Checks if the given character is an ASCII character.
  * @param c The character to be checked.
  * @return A non-zero value if it is an ASCII character.
  */
-int	ft_isascii(int c);
+int			ft_isascii(int c);
 
 /**
  * @brief Checks if the given character is a printable character.
  * @param c The character to be checked.
  * @return A non-zero value if it is a printable character.
  */
-int	ft_isprint(int c);
+int			ft_isprint(int c);
 
 /**
  * @brief Converts the given character to its lowercase form.
@@ -237,7 +237,7 @@ int	ft_isprint(int c);
  * @return The given character lowercase version, if it exists, otherwise
  * it is returned unchanged.
  */
-int	ft_tolower(int c);
+int			ft_tolower(int c);
 
 /**
  * @brief Converts the given character to its uppercase form.
@@ -245,6 +245,6 @@ int	ft_tolower(int c);
  * @return The given character uppercase version, if it exists, otherwise
  * it is returned unchanged.
  */
-int	ft_toupper(int c);
+int			ft_toupper(int c);
 
 #endif
