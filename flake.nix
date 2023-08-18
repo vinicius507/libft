@@ -29,16 +29,14 @@
       libft = pkgs.stdenv.mkDerivation {
         pname = "libft";
         version = "1.0.0";
-        src = ./.;
+        src = ./libft;
         nativeBuildInputs = with pkgs; [
           llvmPackages_12.libcxxClang
         ];
         installPhase = ''
           mkdir -p $out/lib
-          mkdir -p $out/include
-
           cp libft.a $out/lib
-          cp include/libft.h $out/include
+          cp -r include $out/include
         '';
         meta = with pkgs.lib; {
           license = licenses.agpl3Only;
