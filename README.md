@@ -9,6 +9,11 @@
     <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
 </p>
 
+<p align="center">
+    [![build](https://github.com/vinicius507/libft/actions/workflows/build.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/build.yml)
+    [![norminette](https://github.com/vinicius507/libft/actions/workflows/norminette.yml/badge.svg)](https://github.com/vinicius507/libft/actions/workflows/norminette.yml)
+</p>
+
 # Libft
 **My very first library in C, made for 42 School.**
 
