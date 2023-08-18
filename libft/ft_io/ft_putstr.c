@@ -13,10 +13,6 @@
 #include <libft.h>
 #include <unistd.h>
 
-/**
- * @brief Writes a string on STDOUT.
- * @param s
- */
 void	ft_putstr(char *s)
 {
 	size_t	size;

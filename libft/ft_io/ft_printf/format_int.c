@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
+#include "ft_printf.h"
 
 static long long int	get_nbr(t_arg *arg, long long int n)
 {

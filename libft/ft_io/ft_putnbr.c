@@ -11,12 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io.h>
 
-/**
- * @brief Writes a number on STDOUT.
- * @param n
- */
 void	ft_putnbr(int n)
 {
 	char	*str_n;

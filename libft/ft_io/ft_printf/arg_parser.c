@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
+#include "ft_printf.h"
 
 static	t_types	get_type(char f)
 {

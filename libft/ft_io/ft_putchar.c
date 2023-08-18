@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <unistd.h>
-#include <libft/ft_io.h>
 
-/**
- * @brief Writes a character on STDOUT.
- * @param c
- */
 void	ft_putchar(char c)
 {
 	(void)write(1, &c, 1);

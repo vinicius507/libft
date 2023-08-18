@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io.h>
 
-/**
- * @brief Writes a number on a file descriptor.
- * @param n
- * @param fd
- */
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	*str_n;

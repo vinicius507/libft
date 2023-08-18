@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
 #include <unistd.h>
+#include "ft_printf.h"
 
 void	safe_free(void **ptr)
 {

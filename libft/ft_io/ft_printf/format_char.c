@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
+#include "ft_printf.h"
 
 char	*format_char(t_arg *arg, va_list ap)
 {

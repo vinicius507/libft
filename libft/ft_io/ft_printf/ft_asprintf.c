@@ -11,15 +11,8 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
+#include "ft_printf.h"
 
-/**
- * @brief Allocates a formated string.
- * @param buf Address to allocate for the formatted string
- * @param format The format string
- * @param ap The `va_list` of the specifiers values for the formatted output
- * @return On success, the number of characters on the formatted string
- */
 int	ft_vasprintf(char **buf, const char *format, va_list ap)
 {
 	char	*dup;
@@ -47,13 +40,6 @@ int	ft_vasprintf(char **buf, const char *format, va_list ap)
 	return (arg.printed);
 }
 
-/**
- * @brief Allocates a formated string.
- * @param buf Address to allocate for the formatted string
- * @param format The format string
- * @param ... The specifiers values for the formatted output
- * @return On success, the number of characters on the formatted string
- */
 int	ft_asprintf(char **buf, const char *format, ...)
 {
 	va_list	ap;

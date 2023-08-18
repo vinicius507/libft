@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stddef.h>
-#include <libft/ft_io.h>
 
-/**
- * @brief Writes a string followed by a line-break on a file descriptor.
- * @param s
- * @param fd
- */
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (s == NULL)

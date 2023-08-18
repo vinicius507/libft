@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <unistd.h>
-#include <libft/ft_io.h>
 
-/**
- * @brief Writes a character on a file descriptor.
- * @param c
- * @param fd
- */
 void	ft_putchar_fd(char c, int fd)
 {
 	(void)write(fd, &c, 1);

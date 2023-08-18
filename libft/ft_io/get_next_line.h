@@ -25,6 +25,4 @@ enum e_gnlstatus
 	GNLEOF,
 };
 
-char	*get_next_line(int fd);
-
 #endif

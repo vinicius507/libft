@@ -13,10 +13,6 @@
 #include <libft.h>
 #include <unistd.h>
 
-/**
- * @brief Writes a string on a file descriptor.
- * @param s
- */
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	size;

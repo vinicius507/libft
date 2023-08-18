@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/get_next_line.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "get_next_line.h"
 
 static int	found_linebreak(char *save)
 {

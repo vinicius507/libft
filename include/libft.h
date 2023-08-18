@@ -21,8 +21,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdarg.h>
 
-# include <libft/ft_io.h>
 # include <libft/ft_lst.h>
 
 /**
@@ -521,5 +521,136 @@ char		*ft_substr(const char *s, unsigned int start, size_t len);
  * @return A null-terminated array of split substrings.
  */
 char		**ft_split(const char *s, char c);
+
+/**
+ * @brief Write a character to the standard output (STDOUT).
+ * @param c The character to be written.
+ */
+void		ft_putchar(char c);
+
+/**
+ * @brief Write a character to a file descriptor.
+ * @param c The character to be written.
+ * @param fd The file descriptor to be written to.
+ */
+void		ft_putchar_fd(char c, int fd);
+
+/**
+ * @brief Write a character string to the standard output (STDOUT).
+ * @param s The character string to be written.
+ */
+void		ft_putstr(char *s);
+
+/**
+ * @brief Write a character string to the standard output (STDOUT).
+ * @param s The character string to be written.
+ * @param fd The file descriptor to be written to.
+ */
+void		ft_putstr_fd(char *s, int fd);
+
+/**
+ * @brief Write a string followed by a newline to a specified file descriptor.
+ * @param s The string to be written.
+ * @param fd The file descriptor to write to.
+ */
+void		ft_putendl_fd(char *s, int fd);
+
+/**
+ * @brief Write an integer to the standard output (STDOUT).
+ * @param n The integer to be written.
+ */
+void		ft_putnbr(int s);
+
+/**
+ * @brief Write an integer to a specified file descriptor.
+ * @param n The integer to be written.
+ * @param fd The file descriptor to write to.
+ */
+void		ft_putnbr_fd(int s, int fd);
+
+/**
+ * @brief Retrieve the next line from a file descriptor.
+ * @param fd The file descriptor to read from.
+ * @return A pointer to an allocated string if successful, otherwise, NULL.
+ */
+char		*get_next_line(int fd);
+
+/**
+ * @brief Formatted printing to the standard output.
+ * @param str The format string to be printed.
+ * @param ... Additional arguments to be formatted and printed.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_printf(const char *str, ...);
+
+/**
+ * @brief Formatted printing to the standard output using a va_list.
+ * @param format The format string to be printed.
+ * @param ap The va_list containing additional arguments.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_vprintf(const char *format, va_list ap);
+
+/**
+ * @brief Formatted printing to a specified file descriptor.
+ * @param fd The file descriptor to write to.
+ * @param format The format string to be printed.
+ * @param ... Additional arguments to be formatted and printed.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_dprintf(int fd, const char *format, ...);
+
+/**
+ * @brief Formatted printing to a specified file descriptor using a va_list.
+ * @param fd The file descriptor to write to.
+ * @param format The format string to be printed.
+ * @param ap The va_list containing additional arguments.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_vdprintf(int fd, const char *format, va_list ap);
+
+/**
+ * @brief Formatted printing to a character buffer.
+ * @param buf The character buffer to store the formatted string.
+ * @param format The format string to be printed.
+ * @param ... Additional arguments to be formatted and printed.
+ * @return The number of characters that would have been printed (excluding the
+ * null-terminator) if enough space was available.
+ */
+int			ft_sprintf(char *buf, const char *format, ...);
+
+/**
+ * @brief Formatted printing to a character buffer using a va_list.
+ * @param buf The character buffer to store the formatted string.
+ * @param format The format string to be printed.
+ * @param ap The va_list containing additional arguments.
+ * @return The number of characters that would have been printed (excluding the
+ * null-terminator) if enough space was available.
+ */
+int			ft_vsprintf(char *buf, const char *format, va_list ap);
+
+/**
+ * @brief Allocate and format a string using a va_list.
+ * @param buf A pointer to the allocated string.
+ * @param format The format string to be printed.
+ * @param ap The va_list containing additional arguments.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_vasprintf(char **buf, const char *format, va_list ap);
+
+/**
+ * @brief Allocate and format a string.
+ * @param buf A pointer to the allocated string.
+ * @param format The format string to be printed.
+ * @param ... Additional arguments to be formatted and printed.
+ * @return The number of characters printed (excluding the null-terminator)
+ * or a negative value on error.
+ */
+int			ft_asprintf(char **buf, const char *format, ...);
 
 #endif

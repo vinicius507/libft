@@ -11,17 +11,9 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io/ft_printf.h>
 #include <unistd.h>
+#include "ft_printf.h"
 
-/**
- * @brief Writes formatted string on a file descriptor.
- * @param fd The file descriptor to be written
- * @param format The format string
- * @param ap The `va_list` of the specifiers values for the formatted output
- * @return On success, the number of characters written on the file
- * descriptor, else, -1
- */
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
 	t_arg	arg;
@@ -50,14 +42,6 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 	return (arg.printed);
 }
 
-/**
- * @brief Writes formatted string on a file descriptor.
- * @param fd The file descriptor to be written
- * @param format The format string
- * @param ... The specifiers values for the formatted output
- * @return On success, the number of characters written on the file
- * descriptor, else, -1
- */
 int	ft_dprintf(int fd, const char *format, ...)
 {
 	va_list	ap;

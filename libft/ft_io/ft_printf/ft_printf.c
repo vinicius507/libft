@@ -11,16 +11,9 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libft/ft_io.h>
-#include <libft/ft_io/ft_printf.h>
 #include <unistd.h>
+#include "ft_printf.h"
 
-/**
- * @brief Writes formatted string on STDOUT.
- * @param format The format string
- * @param ap The `va_list` of the specifiers values for the formatted output
- * @return On success, the number of characters written on STDOUT, else, -1
- */
 int	ft_vprintf(const char *format, va_list ap)
 {
 	int	printed;
@@ -29,12 +22,6 @@ int	ft_vprintf(const char *format, va_list ap)
 	return (printed);
 }
 
-/**
- * @brief Writes formatted string on STDOUT.
- * @param format The format string
- * @param ... The specifiers values for the formatted output
- * @return On success, the number of characters written on STDOUT, else, -1
- */
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
