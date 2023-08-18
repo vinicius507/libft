@@ -168,7 +168,7 @@ char		*ft_uitoa_base(unsigned int n, char *base);
  *
  * Example Usage:
  * @code
- * char *str = ft_uitoa_base(4, "01");
+ * char *str = ft_ultoa_base(4, "01");
  * printf("%s\n", str); // Outputs '100'
  * @endcode
  */
@@ -183,7 +183,7 @@ char		*ft_ultoa_base(unsigned long int n, char *base);
  *
  * Example Usage:
  * @code
- * char *str = ft_uitoa_base(4, "01");
+ * char *str = ft_ulloa_base(4, "01");
  * printf("%s\n", str); // Outputs '100'
  * @endcode
  */
