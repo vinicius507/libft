@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/11/29 12:31:39 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2023/08/18 10:43:53 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,8 @@ char		*ft_ultoa_base(unsigned long int n, char *base);
  * character string `base` as numeric base.
  * @param n The unsigned long long integer value to be converted.
  * @param base A character string representing the numeric base.
- * @return The string form of the unsigned long long integer `n` in its `base` form
+ * @return The string form of the unsigned long long integer `n` in its
+ * `base` form.
  *
  * Example Usage:
  * @code
