@@ -24,6 +24,27 @@
           };
         });
   in {
+    packages = forEachSystem ({pkgs}: {
+      default = self.packages.${pkgs.system}.libft;
+      libft = pkgs.stdenv.mkDerivation {
+        pname = "libft";
+        version = "1.0.0";
+        src = ./.;
+        nativeBuildInputs = with pkgs; [
+          llvmPackages_12.libcxxClang
+        ];
+        installPhase = ''
+          mkdir -p $out/lib
+          mkdir -p $out/include
+
+          cp libft.a $out/lib
+          cp include/libft.h $out/include
+        '';
+        meta = with pkgs.lib; {
+          license = licenses.agpl3Only;
+        };
+      };
+    });
     devShells = forEachSystem ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
