@@ -20,7 +20,10 @@
         f {
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ft-nix.overlays.norminette];
+            overlays = [
+              self.overlays.libft
+              ft-nix.overlays.norminette
+            ];
           };
         });
   in {
@@ -37,24 +40,18 @@
       };
     });
     packages = forEachSystem ({pkgs}: {
-      default = self.packages.${pkgs.system}.libft;
-      libft = pkgs.stdenv.mkDerivation {
-        pname = "libft";
-        version = "1.0.0";
-        src = ./libft;
-        nativeBuildInputs = with pkgs; [
-          llvmPackages_12.libcxxClang
-        ];
-        installPhase = ''
-          mkdir -p $out/lib
-          cp libft.a $out/lib
-          cp -r include $out/include
-        '';
-        meta = with pkgs.lib; {
-          license = licenses.agpl3Only;
-        };
+      default = pkgs.libft;
+      libft = import ./nix/pkgs/libft.nix {
+        inherit (pkgs) lib;
+        inherit (pkgs.llvmPackages_12) stdenv;
       };
     });
+    overlays = {
+      default = self.overlays.libft;
+      libft = final: _: {
+        libft = self.packages.${final.system}.libft;
+      };
+    };
     devShells = forEachSystem ({pkgs}: let
       mkShell = pkgs.mkShell.override {inherit (pkgs.llvmPackages_12) stdenv;};
     in {
