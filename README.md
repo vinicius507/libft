@@ -1,13 +1,13 @@
-<p align="center"> <img
- src="https://game.42sp.org.br/static/assets/achievements/libftm.png"> </p>
+<p align="center">
+ <img src="https://game.42sp.org.br/static/assets/achievements/libftm.png">
+</p>
 
-<p align="center"> <img src="https://img.shields.io/badge/OS-Linux-blue"
- alt="OS"> <img src="https://img.shields.io/badge/Language-C-orange.svg"
-  alt="Language"> <img
-  src="https://img.shields.io/badge/Grade-115%2F100-brightgreen.svg"
-  alt="Grade"> <img
-  src="https://img.shields.io/badge/Status-Completed-brightgreen.svg"
-  alt="Status"> </p>
+<p align="center">
+ <img src="https://img.shields.io/badge/OS-Linux-blue" alt="OS">
+ <img src="https://img.shields.io/badge/Language-C-orange.svg" alt="Language">
+ <img src="https://img.shields.io/badge/Grade-115%2F100-brightgreen.svg" alt="Grade">
+ <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
+</p>
 
 # Libft
 
@@ -81,23 +81,15 @@ Or add it to a `nix develop` shell:
     pkgs = import nixpkgs {
       inherit system;
       overlays = [
-        # Adds the libft library and header file to the shell LIBRARY_PATH and C_INCLUDE_PATH
         libft.overlays.libft
-        # Overrides the stdenv from mkShell to use clang 12
-        libft.overlays.devshell
+        libft.overlays.devshell # Overrides the stdenv from mkShell to use clang 12
         self.overlays.ft_malcolm
       ];
     };
   in {
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        bear
-        clang-tools_12
-        gnumake
-        norminette
-        valgrind
-        pkgs.libft
-      ];
+      # Adds the libft library and header file to the shell LIBRARY_PATH and C_INCLUDE_PATH
+      packages = [pkgs.libft];
     };
   };
 }
