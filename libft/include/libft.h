@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2024/06/19 13:52:24 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:30:13 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@
  * @return The integer representation from `nptr`.
  */
 int			ft_atoi(const char *nptr);
+
+/**
+ * @brief Converts the initial portion of the string `nptr` to an integer using
+ * the character string `base` as numeric base.
+ * @param nptr The string to be converted.
+ * @param base A character string representing the numeric base.
+ * @return The integer representation from `nptr`.
+ */
+int			ft_atoi_base(const char *nptr, const char *base);
 
 /**
  * @brief Converts the initial portion of the string `nptr` to a long long
