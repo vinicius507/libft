@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:02:26 by vgoncalv          #+#    #+#             */
-/*   Updated: 2023/08/18 10:43:53 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:52:24 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,6 +227,13 @@ int			ft_isascii(int c);
  * @return A non-zero value if it is a printable character.
  */
 int			ft_isprint(int c);
+
+/**
+ * @brief Checks if the given character is a whitespace character.
+ * @param c The character to be checked.
+ * @return A non-zero value if it is a whitespace character.
+ */
+int			ft_isspace(int c);
 
 /**
  * @brief Converts the given character to its lowercase form.

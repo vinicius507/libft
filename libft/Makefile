@@ -36,7 +36,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	   format_hexa.c format_int.c format_literal.c format_ptr.c \
 	   format_str.c format_uint.c ft_asprintf.c ft_dprintf.c \
 	   ft_printf.c ft_sprintf.c length_parser.c precision_parser.c \
-	   utils.c width_parser.c
+	   utils.c width_parser.c ft_isspace.c
 
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 

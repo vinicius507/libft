@@ -6,19 +6,11 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:11:10 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/05 15:29:01 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:53:11 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
-		|| c == '\f' || c == '\v')
-		return (1);
-	return (0);
-}
 
 static long double	get_decimal(const char *nptr, int sign)
 {
