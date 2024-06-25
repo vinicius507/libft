@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 18:32:34 by vgoncalv          #+#    #+#             */
-/*   Updated: 2022/09/04 15:47:36 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:38:29 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (ptr1[offset] != ptr2[offset])
 			return (ptr1[offset] - ptr2[offset]);
+		offset++;
 	}
 	return (0);
 }
